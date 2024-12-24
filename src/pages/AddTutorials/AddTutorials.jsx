@@ -1,5 +1,6 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const AddTutorials = () => {
     const { user } = useAuth()
@@ -14,8 +15,16 @@ const AddTutorials = () => {
         const tutorFee = parseInt(form.price.value);
         const description = form.description.value;
         const review = 0;
-
         console.table({ tutorName, tutorEmail, image, language, tutorFee, description, review })
+        const newTutorial = { tutorName, tutorEmail, image, language, tutorFee, description, review }
+
+        axios.post('http://localhost:3000/add-tutorials', newTutorial)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (

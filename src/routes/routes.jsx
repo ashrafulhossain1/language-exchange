@@ -9,6 +9,7 @@ import SignIn from "../pages/Auth/SignIn";
 import SignUp from "../pages/Auth/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Tutors from "../pages/Tutors/Tutors";
+import TutorDetails from "../pages/TutorDetails/TutorDetails";
 
 const routes = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const routes = createBrowserRouter([
             {
                 path: '/find-tutors/:language',
                 element: <Tutors></Tutors>
+            },
+            {
+                path: '/tutor/:id',
+                element: <PrivateRoute> <TutorDetails></TutorDetails></PrivateRoute>
             },
             {
                 path: '/add-tutorials',
