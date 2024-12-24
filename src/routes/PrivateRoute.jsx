@@ -5,16 +5,16 @@ import { Navigate, useLocation } from 'react-router-dom';
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth()
     const location = useLocation()
-    console.log(location)
+    // console.log(location)
 
     if (loading) {
         return <div className="skeleton bg-teal-600 bg-opacity-5 h-16 w-16 shrink-0 rounded-full"></div>
     }
-    if (user) {
+    if (user) { 
         return children
     }
     return <Navigate to={'/signIn'} state={location?.pathname}></Navigate>
 
 };
 
-export default PrivateRoute;
+export default PrivateRoute; 

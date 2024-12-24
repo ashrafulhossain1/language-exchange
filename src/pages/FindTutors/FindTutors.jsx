@@ -14,7 +14,7 @@ const FindTutors = () => {
         fetchJobs()
     }, [])
 
-    console.log(tutors)
+    // console.log(tutors)
     return (
         <div>
             {/* heading title and description */}
