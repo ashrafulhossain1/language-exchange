@@ -8,6 +8,7 @@ import BookTutors from "../pages/BookedTutors/BookTutors";
 import SignIn from "../pages/Auth/SignIn";
 import SignUp from "../pages/Auth/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import Tutors from "../pages/Tutors/Tutors";
 
 const routes = createBrowserRouter([
     {
@@ -20,8 +21,12 @@ const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'find-tutors',
+                path: '/find-tutors',
                 element: <FindTutors></FindTutors>
+            },
+            {
+                path: '/find-tutors/:language',
+                element: <Tutors></Tutors>
             },
             {
                 path: '/add-tutorials',
