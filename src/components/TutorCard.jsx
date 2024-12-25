@@ -26,14 +26,14 @@ const TutorCard = ({ tutor }) => {
                     <h1 className="text-xl font-light">{tutorName}</h1>
                     <p className="text-gray-700 font-medium">Language: {language}</p>
                     <h3 className="font-bold text-lg">Fee: ${tutorFee} Per Hour</h3>
-                    <p>{description.slice(0, 150)}...</p>
+                    <div>{description.slice(0, 100)}...</div>
                 </div>
                 <div className="flex justify-between items-center">
                     <div>
                         <span className="text-2xl flex items-center gap-2"><FaStar className=""></FaStar>{review}</span>
                         <span className="text-gray-500">Reviews</span>
                     </div>
-                    <Link  to={`/tutor/${_id}`} className="btn w-1/2 border border-black bg-[#FF7AAC]">Details</Link>
+                    <Link to={`/tutor/${_id}`} className="btn w-1/2 border border-black bg-[#FF7AAC]">Details</Link>
                 </div>
             </div>
         </div>

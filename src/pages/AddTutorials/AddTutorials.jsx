@@ -1,9 +1,12 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const AddTutorials = () => {
     const { user } = useAuth()
+    const navigate = useNavigate()
 
     const handleAddTutorial = (e) => {
         e.preventDefault()
@@ -20,7 +23,17 @@ const AddTutorials = () => {
 
         axios.post('http://localhost:3000/add-tutorials', newTutorial)
             .then(res => {
-                console.log(res.data)
+                if(res.data.insertedId){
+                    Swal.fire({
+                       // position: "top-end",
+                       icon: "success",
+                       title: "Your Tutorial added successfully",
+                       showConfirmButton: true,
+                       // timer: 1500
+                    });
+                     form.reset()
+                     navigate('/my-tutorials')
+                 }
             })
             .catch(error => {
                 console.log(error)

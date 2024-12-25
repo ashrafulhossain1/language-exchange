@@ -51,7 +51,7 @@ const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:3000/tutor/${params.updateId}`)
             },
             {
-                path: '/booked-tutors',
+                path: '/my-books',
                 element: <PrivateRoute><BookTutors></BookTutors></PrivateRoute>
             },
             {

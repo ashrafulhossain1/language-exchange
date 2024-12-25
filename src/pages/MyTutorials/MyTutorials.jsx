@@ -25,6 +25,8 @@ const MyTutorials = () => {
     }
 
 
+    // delete function and again data fetch
+
     const handleDelete = (id) => {
         console.log(id)
         Swal.fire({
@@ -52,7 +54,6 @@ const MyTutorials = () => {
                     .catch(error => {
                         console.log(error)
                     })
-
             }
         });
     }
@@ -71,7 +72,7 @@ const MyTutorials = () => {
     return (
         <div className="bg-gray-100 min-h-screen">
             <h1 className="text-2xl font-bold text-center mb-6">My Tutorials</h1>
-            <table className="w-full bg-white shadow-lg rounded-lg">
+            <table className="w-full bg-white shadow-lg rounded-lg overflow-x-auto">
                 <thead>
                     <tr className="bg-gray-200 text-gray-700 text-sm md:text-base">
                         <th className="p-2">Name</th>

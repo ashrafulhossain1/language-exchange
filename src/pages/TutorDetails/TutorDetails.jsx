@@ -1,9 +1,15 @@
 import { FaStar } from "react-icons/fa";
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const TutorDetails = () => {
     const singleTutorDetails = useLoaderData()
+    const { user } = useAuth()
+    const navigate = useNavigate()
+
     const {
         _id,
         tutorName,
@@ -15,6 +21,41 @@ const TutorDetails = () => {
         description,
         review,
     } = singleTutorDetails;
+
+// post request for booked tutor
+    const handleBook = () => {
+        const bookData = {
+            tutorId: _id,
+            tutorName,
+            image,
+            language,
+            tutorFee,
+            tutorEmail,
+            userEmail: user?.email
+        }
+
+        axios.post('http://localhost:3000/add-book', bookData)
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        // position: "top-end",
+                        icon: "success",
+                        title: "Tutor successfully added to the booked list",
+                        showConfirmButton: true,
+                        // timer: 1500
+                    });
+                    navigate('/my-books')
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }
+
+
+
+
 
     return (
         <div className="flex flex-col md:flex-row items-center p-4 gap-4 max-w-screen-xl mx-auto border">
@@ -40,7 +81,7 @@ const TutorDetails = () => {
                         <span className="text-2xl flex items-center gap-2"><FaStar className=""></FaStar>{review}</span>
                         <span className="text-gray-500">Reviews</span>
                     </div>
-                    <button className="btn w-full border border-black bg-[#FF7AAC]">Book</button>
+                    <button onClick={handleBook} className="btn w-full border border-black bg-[#FF7AAC]">Book</button>
                 </div>
             </div>
         </div>

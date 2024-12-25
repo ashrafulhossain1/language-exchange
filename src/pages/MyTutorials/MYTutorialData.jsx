@@ -17,19 +17,21 @@ const MYTutorialData = ({ tutorial, handleDelete, handleUpdate }) => {
             <td className="p-2 md:p-4">${tutorFee}</td>
             <td className="p-2 md:p-4">{description.slice(0, 14)}..</td>
             <td className="p-2 md:p-4 ">{review}</td>
-            <td className="p-2 md:p-4 md:flex gap-2">
+            <td className="p-2 md:p-4 md:flex items-center justify-center gap-2">
                 <Link
                     to={`/tutorial-update/${_id}`}
                     className="bg-blue-500 w-full text-center text-white px-2 md:px-4 py-2 rounded mr-2 hover:bg-blue-600"
                 >
-                    Update
+                    <button className='w-full h-full'>Update </button>
                 </Link>
-                <button
-                    onClick={() => handleDelete(_id)}
-                    className="bg-red-500 w-full text-white px-2 md:px-4 py-2 rounded hover:bg-red-600"
-                >
-                    Delete
-                </button>
+                <div className="bg-red-500 w-full text-white px-2 md:px-4 py-2 rounded hover:bg-red-600">
+                    <button
+                        onClick={() => handleDelete(_id)}
+                        
+                    >
+                        Delete
+                    </button>
+                </div>
             </td>
         </tr>
     );
