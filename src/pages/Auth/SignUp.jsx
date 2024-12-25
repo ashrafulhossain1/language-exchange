@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const SignUp = () => {
     const { emailPasswordSignUp, updateNameAndPhoto } = useAuth()
@@ -16,7 +17,8 @@ const SignUp = () => {
         const password = form.password.value;
         console.table({ name, photo, email, password })
 
-// create user and update Profile
+        const userInfo = { name, email }
+        // create user and update Profile
         emailPasswordSignUp(email, password)
             .then(result => {
                 console.log(result.user)
@@ -28,6 +30,12 @@ const SignUp = () => {
                     }).catch((error) => {
                         console.log("update Error", error)
                     })
+
+                axios.post('http://localhost:3000/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                    })
+
                 navigate('/')
             })
             .catch(error => {

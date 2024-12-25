@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const GoogleSignIn = ({ reExecute }) => {
     const { googleSignIn } = useAuth()
@@ -9,16 +10,66 @@ const GoogleSignIn = ({ reExecute }) => {
     // const reExecute = location
     // console.log(location)
 
+    // const handleGoogleSignIn = () => {
+    //     googleSignIn()
+    //         .then((result) => {
+    //             console.log('google login', result.user)
+
+
+
+
+    //             navigate(reExecute)
+    //         })
+    //         .catch((error)=>{
+    //             console.log('google Login error', error)
+    //         })
+    // }
+
+
+
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log('google login', result.user)
-                navigate(reExecute)
+                console.log('Google login successful', result.user);
+                const name = result?.user?.displayName;
+                const email = result?.user?.email;
+
+
+                // DB - users add
+                const userInfo = { name, email};
+                axios.get(`http://localhost:3000/users/${email}`)
+                    .then((response) => {
+                        if (response.data) {
+                            console.log("User already exists:", response.data);
+                            
+                            navigate(reExecute);
+                        } else {
+                            console.log("New user, creating account...");
+                            axios.post('http://localhost:3000/users', userInfo)
+                                .then((postResponse) => {
+                                    console.log("New user added:", postResponse.data);
+                                    navigate(reExecute);
+                                })
+                                .catch((error) => {
+                                    console.error("Error adding user:", error);
+                                });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error checking user:", error);
+                    });
+
             })
-            .catch((error)=>{
-                console.log('google Login error', error)
-            })
-    }
+            .catch((error) => {
+                console.log('Google Login error', error);
+            });
+    };
+
+
+
+
+
+
 
     return (
         <button onClick={handleGoogleSignIn}
