@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TutorCard from '../../components/TutorCard';
-import axios from 'axios';
 
-const FindTutors = () => {
-    const [tutors, setTutors] = useState([])
+const CategoryTutor = () => {
+    const tutors = useLoaderData()
 
-    useEffect(() => {
-        const fetchJobs = async () => {
-            const { data } = await axios.get(`http://localhost:3000/tutors`)
-            setTutors(data)
-        }
-        fetchJobs()
-    }, [])
 
-    // console.log(tutors)
+    console.log(tutors)
+
+    if (tutors.length == 0) {
+        return (
+            <div>
+                <h1 className="text-4xl text-center">
+                    There No have any Tutors Of this Criteria
+                </h1>
+            </div>
+        )
+    }
+
     return (
         <div>
             {/* heading title and description */}
@@ -29,4 +32,4 @@ const FindTutors = () => {
     );
 };
 
-export default FindTutors;
+export default CategoryTutor;

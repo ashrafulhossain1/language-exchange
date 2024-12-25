@@ -1,5 +1,6 @@
 import React from 'react';
-const MYTutorialData = ({ tutorial, handleDelete }) => {
+import { Link } from 'react-router-dom';
+const MYTutorialData = ({ tutorial, handleDelete, handleUpdate }) => {
     const { _id, tutorName, image, language, tutorFee, description, review } = tutorial
 
     return (
@@ -17,12 +18,12 @@ const MYTutorialData = ({ tutorial, handleDelete }) => {
             <td className="p-2 md:p-4">{description.slice(0, 14)}..</td>
             <td className="p-2 md:p-4 ">{review}</td>
             <td className="p-2 md:p-4 md:flex gap-2">
-                <button
-                    // onClick={() => handleUpdate(tutorial._id)}
-                    className="bg-blue-500 w-full text-white px-2 md:px-4 py-2 rounded mr-2 hover:bg-blue-600"
+                <Link
+                    to={`/tutorial-update/${_id}`}
+                    className="bg-blue-500 w-full text-center text-white px-2 md:px-4 py-2 rounded mr-2 hover:bg-blue-600"
                 >
                     Update
-                </button>
+                </Link>
                 <button
                     onClick={() => handleDelete(_id)}
                     className="bg-red-500 w-full text-white px-2 md:px-4 py-2 rounded hover:bg-red-600"

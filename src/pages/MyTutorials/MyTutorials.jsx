@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import MYTutorialData from './MYTutorialData';
+import Swal from 'sweetalert2';
 
 const MyTutorials = () => {
     const { user } = useAuth()
@@ -10,11 +11,11 @@ const MyTutorials = () => {
 
     useEffect(() => {
         fetchMyTutorials()
-    }, [])
+    }, [user.email])
 
     const fetchMyTutorials = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:3000/find-tutors?email=${user.email}`)
+            const { data } = await axios.get(`http://localhost:3000/tutors/${user.email}`)
             setTutorials(data)
             setLoading(false)
         }
@@ -26,6 +27,34 @@ const MyTutorials = () => {
 
     const handleDelete = (id) => {
         console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                axios.delete(`http://localhost:3000/delete-tutor/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Tutorial has been deleted.",
+                                icon: "success"
+                            });
+                            fetchMyTutorials()
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+
+            }
+        });
     }
 
 
@@ -56,10 +85,10 @@ const MyTutorials = () => {
                 </thead>
                 <tbody>
                     {tutorials.map((tutorial) => (
-                        <MYTutorialData 
-                        tutorial={tutorial} 
-                        key={tutorial._id}
-                        handleDelete={handleDelete}
+                        <MYTutorialData
+                            tutorial={tutorial}
+                            key={tutorial._id}
+                            handleDelete={handleDelete}
                         ></MYTutorialData>
                     ))}
                 </tbody>

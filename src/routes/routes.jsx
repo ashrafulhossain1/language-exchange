@@ -10,6 +10,8 @@ import SignUp from "../pages/Auth/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Tutors from "../pages/Tutors/Tutors";
 import TutorDetails from "../pages/TutorDetails/TutorDetails";
+import UpdateTutorial from "../pages/MyTutorials/UpdateTutorial";
+import CategoryTutor from "../pages/CategoryTutor/CategoryTutor";
 
 const routes = createBrowserRouter([
     {
@@ -26,13 +28,14 @@ const routes = createBrowserRouter([
                 element: <FindTutors></FindTutors>
             },
             {
-                path: '/find-tutors/:language',
-                element: <Tutors></Tutors>
+                path: '/tutors/:category',
+                element: <CategoryTutor></CategoryTutor>,
+                loader: ({params})=>fetch(`http://localhost:3000/tutors?category=${params.category}`)
             },
             {
                 path: '/tutor/:id',
                 element: <PrivateRoute> <TutorDetails></TutorDetails></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:3000/find-tutor/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/tutor/${params.id}`)
             },
             {
                 path: '/add-tutorials',
@@ -41,6 +44,11 @@ const routes = createBrowserRouter([
             {
                 path: '/my-tutorials',
                 element: <PrivateRoute><MyTutorials></MyTutorials></PrivateRoute>
+            },
+            {
+                path: '/tutorial-update/:updateId',
+                element: <PrivateRoute><UpdateTutorial></UpdateTutorial></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/tutor/${params.updateId}`)
             },
             {
                 path: '/booked-tutors',

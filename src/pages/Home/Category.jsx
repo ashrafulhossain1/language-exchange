@@ -20,7 +20,7 @@ const Category = () => {
                 <h2 className="text-2xl font-bold text-center mb-6">Language Categories</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {categoryNames.map((category) => (
-                        <Link to={`/find-tutors/${category.language}`}
+                        <Link to={`/tutors/${category.language}`}
                         key={category.id}
                         >
                             <div

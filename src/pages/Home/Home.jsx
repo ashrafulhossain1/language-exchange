@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             {/* banner */}
             <div className='hidden'>
-                <Banner></Banner>
+                {/* <Banner></Banner> */}
             </div>
             {/* count-Up-here */}
             <div>

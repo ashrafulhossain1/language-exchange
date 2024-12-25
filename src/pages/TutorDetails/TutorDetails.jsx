@@ -30,9 +30,8 @@ const TutorDetails = () => {
             {/* Right Side: Details */}
             <div className="flex-1 flex flex-col">
                 <div className="flex-grow">
-                    <img className="w-12 h-12 rounded-full object-cover border-1 p-0.5 bg-purple-600" src='https://i.ibb.co.com/YRhtWdk/psychologist.jpg' alt="" />
-                    <h1 className="text-xl font-light">{tutorName}</h1>
-                    <p className="text-gray-700 font-medium">Language: {language}</p>
+                    <h1 className="text-xl font-semibold">{tutorName}</h1>
+                    <p className="text-gray-700 font-light">Language: {language}</p>
                     <h3 className="font-bold text-lg">Fee: ${tutorFee} Per Hour</h3>
                     <p>{description}</p>
                 </div>
