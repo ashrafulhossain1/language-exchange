@@ -20,14 +20,14 @@ const MYTutorialData = ({ tutorial, handleDelete, handleUpdate }) => {
             <td className="p-2 md:p-4 md:flex items-center justify-center gap-2">
                 <Link
                     to={`/tutorial-update/${_id}`}
-                    className="bg-blue-500 w-full text-center text-white px-2 md:px-4 py-2 rounded mr-2 hover:bg-blue-600"
+                    className="bg-blue-500  text-center text-white px-2 md:px-4 py-2 rounded mr-2 hover:bg-blue-600"
                 >
-                    <button className='w-full h-full'>Update </button>
+                    <button className=''>Update </button>
                 </Link>
-                <div className="bg-red-500 w-full text-white px-2 md:px-4 py-2 rounded hover:bg-red-600">
+                <div className="bg-red-500  text-white text-center px-2 md:px-4 py-2 rounded hover:bg-red-600">
                     <button
+                        className=''
                         onClick={() => handleDelete(_id)}
-                        
                     >
                         Delete
                     </button>

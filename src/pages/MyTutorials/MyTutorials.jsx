@@ -72,28 +72,30 @@ const MyTutorials = () => {
     return (
         <div className="bg-gray-100 min-h-screen">
             <h1 className="text-2xl font-bold text-center mb-6">My Tutorials</h1>
-            <table className="w-full bg-white shadow-lg rounded-lg overflow-x-auto">
-                <thead>
-                    <tr className="bg-gray-200 text-gray-700 text-sm md:text-base">
-                        <th className="p-2">Name</th>
-                        <th className="p-2">Image</th>
-                        <th className="p-2">Language</th>
-                        <th className="p-2">Price</th>
-                        <th className="p-2">Description</th>
-                        <th className="p-2">Review</th>
-                        <th className="p-2">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tutorials.map((tutorial) => (
-                        <MYTutorialData
-                            tutorial={tutorial}
-                            key={tutorial._id}
-                            handleDelete={handleDelete}
-                        ></MYTutorialData>
-                    ))}
-                </tbody>
-            </table>
+            <div className='overflow-x-auto'>
+                <table className="w-full bg-white shadow-lg rounded-lg overflow-x-auto">
+                    <thead>
+                        <tr className="bg-gray-200 text-gray-700 text-sm md:text-base">
+                            <th className="p-2">Name</th>
+                            <th className="p-2">Image</th>
+                            <th className="p-2">Language</th>
+                            <th className="p-2">Price</th>
+                            <th className="p-2">Description</th>
+                            <th className="p-2">Review</th>
+                            <th className="p-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tutorials.map((tutorial) => (
+                            <MYTutorialData
+                                tutorial={tutorial}
+                                key={tutorial._id}
+                                handleDelete={handleDelete}
+                            ></MYTutorialData>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

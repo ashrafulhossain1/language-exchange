@@ -22,16 +22,27 @@ const TutorDetails = () => {
         review,
     } = singleTutorDetails;
 
-// post request for booked tutor
+    // post request for booked tutor
+    // const handleBook = () => {
+    //     const bookData = {
+    //         tutorId: _id,
+    //         tutorName,
+    //         image,
+    //         language,
+    //         tutorFee,
+    //         review,
+    //         tutorEmail,
+    //         userEmail: user?.email,
+
+    //     }
+
+
     const handleBook = () => {
         const bookData = {
             tutorId: _id,
-            tutorName,
-            image,
-            language,
-            tutorFee,
             tutorEmail,
-            userEmail: user?.email
+            userEmail: user?.email,
+
         }
 
         axios.post('http://localhost:3000/add-book', bookData)
