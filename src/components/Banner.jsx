@@ -42,7 +42,7 @@ const Banner = () => {
                                 Learn any language from certified tutors in one-on-one personalized sessions.
                             </p>
                             <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
-                                <a href="#category">Start Learning</a>
+                                <a >Start Learning</a>
                             </button>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ const Banner = () => {
                                 Enhance your language skills with engaging lessons and live practice sessions.
                             </p>
                             <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
-                                <a href="#category">Join Now</a>
+                                <a>Join Now</a>
                             </button>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ const Banner = () => {
                                 Connect with learners and tutors worldwide to achieve your language goals.
                             </p>
                             <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
-                                <a href="#category">Explore Tutors</a>
+                                <a>Explore Tutors</a>
                             </button>
                         </div>
                     </div>
