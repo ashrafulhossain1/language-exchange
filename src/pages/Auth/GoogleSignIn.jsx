@@ -30,38 +30,38 @@ const GoogleSignIn = ({ reExecute }) => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log('Google login successful', result.user);
+                // console.log('Google login successful', result.user);
                 const name = result?.user?.displayName;
                 const email = result?.user?.email;
 
 
                 // DB - users add
                 const userInfo = { name, email};
-                axios.get(`http://localhost:3000/users/${email}`)
+                axios.get(`https://language-express-server-a-10.vercel.app/users/${email}`)
                     .then((response) => {
                         if (response.data) {
-                            console.log("User already exists:", response.data);
+                            // console.log("User already exists:", response.data);
                             
                             navigate(reExecute);
                         } else {
-                            console.log("New user, creating account...");
-                            axios.post('http://localhost:3000/users', userInfo)
+                            // console.log("New user, creating account...");
+                            axios.post('https://language-express-server-a-10.vercel.app/users', userInfo)
                                 .then((postResponse) => {
-                                    console.log("New user added:", postResponse.data);
+                                    // console.log("New user added:", postResponse.data);
                                     navigate(reExecute);
                                 })
                                 .catch((error) => {
-                                    console.error("Error adding user:", error);
+                                    // console.error("Error adding user:", error);
                                 });
                         }
                     })
                     .catch((error) => {
-                        console.error("Error checking user:", error);
+                        // console.error("Error checking user:", error);
                     });
 
             })
             .catch((error) => {
-                console.log('Google Login error', error);
+                // console.log('Google Login error', error);
             });
     };
 

@@ -15,12 +15,12 @@ const MyTutorials = () => {
 
     const fetchMyTutorials = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:3000/tutors/${user.email}`)
+            const { data } = await axios.get(`https://language-express-server-a-10.vercel.app/tutors/${user.email}`)
             setTutorials(data)
             setLoading(false)
         }
         catch (error) {
-            console.log('fetching error')
+            // console.log('fetching error')
         }
     }
 
@@ -28,7 +28,7 @@ const MyTutorials = () => {
     // delete function and again data fetch
 
     const handleDelete = (id) => {
-        console.log(id)
+        // console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -40,7 +40,7 @@ const MyTutorials = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:3000/delete-tutor/${id}`)
+                axios.delete(`https://language-express-server-a-10.vercel.app/delete-tutor/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -52,7 +52,7 @@ const MyTutorials = () => {
                         }
                     })
                     .catch(error => {
-                        console.log(error)
+                        // console.log(error)
                     })
             }
         });

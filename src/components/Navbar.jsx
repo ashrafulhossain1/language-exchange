@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import NavProfile from '../pages/Auth/NavProfile';
+import ThemeToggle from '../context/ThemeToggle';
 
 
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/find-tutors'  end>Find Tutors</NavLink></li>
+        <li><NavLink to='/find-tutors' end>Find Tutors</NavLink></li>
         <li><NavLink to='/add-tutorials'>Add Tutorials</NavLink></li>
         <li><NavLink to='/my-tutorials'>My Tutorials</NavLink></li>
         <li><NavLink to='/my-books'>Booked Tutors</NavLink></li>
@@ -17,8 +18,8 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar mx-auto">
-                <div className="navbar-start">
+            <div className="navbar mx-auto dark:bg-gray-900 dark:text-white">
+                <div className="navbar-start ">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn p-0 btn-ghost lg:hidden">
                             <svg
@@ -50,15 +51,17 @@ const Navbar = () => {
 
                 {/* <div className="text-3xl navbar-end">{wishTest}</div> */}
                 <div className="navbar-end gap-2">
+                    <ThemeToggle></ThemeToggle>
                     <div className='flex justify-center items-center'>
                         {
-                            user ? <NavProfile
-                                user={user}
-                                signOutUser={signOutUser}
-                                loading={loading}></NavProfile> :
-                                loading ? <div className="skeleton bg-teal-600 bg-opacity-5 h-8 w-16 shrink-0 "></div> :
-
-                                    <Link to='/signIn'>Sign In</Link>
+                            user ?
+                                <NavProfile
+                                    user={user}
+                                    signOutUser={signOutUser}
+                                    loading={loading}>
+                                </NavProfile>
+                                :
+                                <Link to='/signIn'>Sign In</Link>
                         }
                     </div>
                 </div>

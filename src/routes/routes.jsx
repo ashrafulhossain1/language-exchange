@@ -28,14 +28,14 @@ const routes = createBrowserRouter([
                 element: <FindTutors></FindTutors>
             },
             {
-                path: '/tutors/:category',
+                path: '/find-tutors/:category',
                 element: <CategoryTutor></CategoryTutor>,
-                loader: ({params})=>fetch(`http://localhost:3000/tutors?category=${params.category}`)
+                loader: ({params})=>fetch(`https://language-express-server-a-10.vercel.app/tutors?category=${params.category}`)
             },
             {
                 path: '/tutor/:id',
                 element: <PrivateRoute> <TutorDetails></TutorDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutor/${params.id}`)
+                loader: ({ params }) => fetch(`https://language-express-server-a-10.vercel.app/tutor/${params.id}`)
             },
             {
                 path: '/add-tutorials',
@@ -48,7 +48,7 @@ const routes = createBrowserRouter([
             {
                 path: '/tutorial-update/:updateId',
                 element: <PrivateRoute><UpdateTutorial></UpdateTutorial></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/tutor/${params.updateId}`)
+                loader: ({ params }) => fetch(`https://language-express-server-a-10.vercel.app/tutor/${params.updateId}`)
             },
             {
                 path: '/my-books',

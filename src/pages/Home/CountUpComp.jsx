@@ -10,17 +10,17 @@ const CountUpComp = () => {
 
     useEffect(() => {
         // tutorCount API call using axios
-        axios.get('http://localhost:3000/tutorCount')
+        axios.get('https://language-express-server-a-10.vercel.app/tutorCount')
             .then(response => setTutorCount(response.data.tutorCount))
             .catch(error => console.error('Error fetching tutor count:', error));
 
         // usersCount API call using axios
-        axios.get('http://localhost:3000/users')
+        axios.get('https://language-express-server-a-10.vercel.app/users')
             .then(response => setUsersCount(response.data.userCount))
             .catch(error => console.error('Error fetching users count:', error));
 
         // reviewsCount API call using axios
-        axios.get('http://localhost:3000/reviewsCount')
+        axios.get('https://language-express-server-a-10.vercel.app/reviewsCount')
             .then(response => setReviewsCount(response.data.reviewCount))
             .catch(error => console.error('Error fetching reviews count:', error));
     }, []);

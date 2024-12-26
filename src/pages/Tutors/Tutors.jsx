@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const Tutors = () => {
     const { language } = useParams()
-    console.log(language)
+    // console.log(language)
     return (
         <div>
             {/* others for challenge part */}

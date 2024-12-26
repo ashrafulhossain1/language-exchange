@@ -1,7 +1,21 @@
 import axios from 'axios';
 import React from 'react';
 
-const BookedTableRow = ({ books, handleReviewCount }) => {
+const BookedTableRow = ({ books, handleReviewCount, error }) => {
+
+
+
+    if (error) {
+        return (
+            <tbody>
+                <tr>
+                    <td colSpan='6' className='text-xl md:text-3xl text-center '>{error}
+                    </td>
+                </tr>
+            </tbody>
+        );
+    }
+
     if (books.length === 0) {
         return (
             <tbody>
@@ -13,7 +27,7 @@ const BookedTableRow = ({ books, handleReviewCount }) => {
         );
     }
 
-    
+
 
     return (
         <>

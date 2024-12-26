@@ -9,8 +9,8 @@ const UpdateTutorial = () => {
     const singleTutor = useLoaderData()
     const { updateId } = useParams()
     const navigate = useNavigate()
-    console.log('update Tutor ID', updateId)
-    console.log(singleTutor)
+    // console.log('update Tutor ID', updateId)
+    // console.log(singleTutor)
     // const {
     //     _id, tutorName, tutorEmail, image, tutorImage, language, tutorFee, description, review,
     // } = singleTutor
@@ -27,10 +27,10 @@ const UpdateTutorial = () => {
         const tutorFee = parseInt(form.price.value);
         const description = form.description.value;
         const review = 0;
-        console.table({ tutorName, tutorEmail, image, language, tutorFee, description, review })
+        // console.table({ tutorName, tutorEmail, image, language, tutorFee, description, review })
         const updatedTutorial = { tutorName, tutorEmail, image, language, tutorFee, description, review }
 
-        axios.put(`http://localhost:3000/updateTutorial/${updateId}`, updatedTutorial)
+        axios.put(`https://language-express-server-a-10.vercel.app/updateTutorial/${updateId}`, updatedTutorial)
             .then(res => {
                 if (res.data.modifiedCount) {
                     Swal.fire({

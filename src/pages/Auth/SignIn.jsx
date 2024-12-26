@@ -14,15 +14,15 @@ const SignIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        // console.log(email, password)
 
         emailPasswordSignIn(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 navigate(reExecute)
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
 
     }

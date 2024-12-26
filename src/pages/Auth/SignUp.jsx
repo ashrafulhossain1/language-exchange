@@ -15,31 +15,31 @@ const SignUp = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.table({ name, photo, email, password })
+        // console.table({ name, photo, email, password })
 
         const userInfo = { name, email }
         // create user and update Profile
         emailPasswordSignUp(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
 
                 // update profile
                 updateNameAndPhoto(name, photo)
                     .then(() => {
-                        console.log('updated SUccessfully')
+                        // console.log('updated SUccessfully')
                     }).catch((error) => {
-                        console.log("update Error", error)
+                        // console.log("update Error", error)
                     })
 
-                axios.post('http://localhost:3000/users', userInfo)
+                axios.post('https://language-express-server-a-10.vercel.app/users', userInfo)
                     .then(res => {
-                        console.log(res.data)
+                        // console.log(res.data)
                     })
 
                 navigate('/')
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
 
 

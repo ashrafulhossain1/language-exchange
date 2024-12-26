@@ -5,10 +5,10 @@ const NavProfile = ({ user, signOutUser, loading }) => {
     const handleSignOut = () => {
         signOutUser()
             .then(() => {
-                console.log('success-Sign-Out')
+                // console.log('success-Sign-Out')
             })
             .catch(error => {
-                console.log('signOut error', error)
+                // console.log('signOut error', error)
             })
     }
 

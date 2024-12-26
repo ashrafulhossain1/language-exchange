@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import BookedTableRow from './BookedTableRow';
+import useAxiosInterceptor from '../../hooks/useAxiosInterceptor';
 // import BookedTableRow from './BookedTableRow';
 // import BookedTableRow from './BookedTableRow';
+
+
+const axiosInterceptor = useAxiosInterceptor()
 
 const BookTutors = () => {
     const { user } = useAuth()
     const [books, setBooks] = useState([])
+    const [error, setError] = useState('')
 
     useEffect(() => {
         fetchMyBooks()
@@ -16,23 +21,29 @@ const BookTutors = () => {
     // fetch (call from useEffect)
     const fetchMyBooks = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:3000/myBooked/${user.email}`)
-            setBooks(data)
+            // const { data } = await axios.get(`https://language-express-server-a-10.vercel.app/myBooked/ah.ashrafulhossan@gmail.com`, { withCredentials: true })
+            // setBooks(data)
+
+
+            const { data } = await axiosInterceptor.get(`/myBooked/${user.email}`)
+            setBooks(data);
+
         }
         catch (error) {
-            console.log('my books fetching error', error)
+            setError(error.message)
+            // console.log('my books fetching error', error.message)
         }
     }
 
 
     const handleReviewCount = async (tutorId) => {
-        try{
-            const { data } = await axios.patch(`http://localhost:3000/review/${tutorId}`)
-            console.log(data)
+        try {
+            const { data } = await axios.patch(`https://language-express-server-a-10.vercel.app/review/${tutorId}`)
+            // console.log(data)
             fetchMyBooks()
         }
-        catch(error){
-            console.log('something error',error)
+        catch (error) {
+            // console.log('something error', error)
         }
     }
 
@@ -53,6 +64,7 @@ const BookTutors = () => {
                         </tr>
                     </thead>
                     <BookedTableRow
+                        error={error}
                         handleReviewCount={handleReviewCount}
                         books={books}>
                     </BookedTableRow>

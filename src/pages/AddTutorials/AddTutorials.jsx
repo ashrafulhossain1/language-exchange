@@ -18,10 +18,10 @@ const AddTutorials = () => {
         const tutorFee = parseInt(form.price.value);
         const description = form.description.value;
         const review = 0;
-        console.table({ tutorName, tutorEmail, image, language, tutorFee, description, review })
+        // console.table({ tutorName, tutorEmail, image, language, tutorFee, description, review })
         const newTutorial = { tutorName, tutorEmail, image, language, tutorFee, description, review }
 
-        axios.post('http://localhost:3000/add-tutorials', newTutorial)
+        axios.post('https://language-express-server-a-10.vercel.app/add-tutorials', newTutorial)
             .then(res => {
                 if(res.data.insertedId){
                     Swal.fire({
@@ -36,7 +36,7 @@ const AddTutorials = () => {
                  }
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
 

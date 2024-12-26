@@ -45,7 +45,7 @@ const TutorDetails = () => {
 
         }
 
-        axios.post('http://localhost:3000/add-book', bookData)
+        axios.post('https://language-express-server-a-10.vercel.app/add-book', bookData)
             .then(res => {
                 if (res.data.insertedId) {
                     Swal.fire({
@@ -59,7 +59,7 @@ const TutorDetails = () => {
                 }
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
 
     }
