@@ -20,13 +20,15 @@ const NavProfile = ({ user, signOutUser, loading }) => {
                     <div className="w-10 rounded-full border border-blue-600">
                         <img
                             alt="user profile picture"
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={user?.displayName || "No Name"}
                             src={user?.photoURL} />
                     </div>
                 </div>
                 <ul
                     tabIndex={0}
                     className="menu m-0 menu-sm dropdown-content bg-base-200 w-286 rounded-box z-[1] mt-3 p-2 shadow ">
-                    <span className='whitespace-nowrap'>{user?.displayName}</span>
+                    <button disabled><span className='whitespace-nowrap dark:text-black'>{user?.displayName}</span></button>
                 </ul>
             </div>
             <button onClick={handleSignOut} className='btn btn-xs md:btn-sm rounded-full'>Sign Out</button>

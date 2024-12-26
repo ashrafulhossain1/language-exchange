@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import CountUp from 'react-countup';
 
 const CountUpComp = () => {
@@ -30,36 +31,42 @@ const CountUpComp = () => {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center gap-x-4">
                     {/* Column 1 */}
-                    <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                        <h1 className="text-4xl font-bold text-black dark:text-slate-50">
-                            <CountUp start={0} end={tutorCount} duration={8} />+
-                        </h1>
-                        <p className="text-gray-600 dark:text-slate-400">Experienced Tutors</p>
-                    </div>
+                    <Fade duration={1000} direction='left'>
+                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
+                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                                <CountUp start={0} end={tutorCount} duration={8} />+
+                            </h1>
+                            <p className="text-gray-600 dark:text-slate-400">Experienced Tutors</p>
+                        </div>
+                    </Fade>
 
                     {/* Column 2 */}
-                    <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                        <h1 className="text-4xl font-bold text-black dark:text-slate-50">
-                            <CountUp start={0} end={reviewsCount} duration={8} />+
-                        </h1>
-                        <p className="text-gray-600 dark:text-slate-400">5-star Reviews</p>
-                    </div>
+                    <Fade duration={500} direction='down'>
+                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
+                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                                <CountUp start={0} end={reviewsCount} duration={8} />+
+                            </h1>
+                            <p className="text-gray-600 dark:text-slate-400">5-star Reviews</p>
+                        </div>
 
-                    {/* Column 3 */}
-                    <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                        <h1 className="text-4xl font-bold text-black dark:text-slate-50">
-                            <CountUp start={0} end={9} duration={8} />+
-                        </h1>
-                        <p className="text-gray-600 dark:text-slate-400">Languages Taught</p>
-                    </div>
+                        {/* Column 3 */}
+                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
+                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                                <CountUp start={0} end={9} duration={8} />+
+                            </h1>
+                            <p className="text-gray-600 dark:text-slate-400">Languages Taught</p>
+                        </div>
+                    </Fade>
 
                     {/* Column 4 */}
-                    <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                        <h1 className="text-4xl font-bold text-black dark:text-slate-50">
-                            <CountUp start={0} end={usersCount} duration={8} />+
-                        </h1>
-                        <p className="text-gray-600 dark:text-slate-400">Active Users</p>
-                    </div>
+                    <Fade duration={1000} direction='right'>
+                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
+                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                                <CountUp start={0} end={usersCount} duration={8} />+
+                            </h1>
+                            <p className="text-gray-600 dark:text-slate-400">Active Users</p>
+                        </div>
+                    </Fade>
                 </div>
             </div>
         </div>

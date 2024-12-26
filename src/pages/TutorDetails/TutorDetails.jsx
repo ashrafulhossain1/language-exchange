@@ -69,21 +69,21 @@ const TutorDetails = () => {
     }
 
     return (
-        <div className="flex flex-col md:flex-row items-center p-4 gap-4 max-w-screen-xl mx-auto border">
+        <div className="flex flex-col md:flex-row items-center p-4 gap-4 max-w-screen-xl mx-auto border mt-20">
             {/* Left Side: Image */}
             <div className="flex-shrink-0 w-full md:w-1/3">
                 <img
                     src={image || tutorImage}
                     alt={tutorName}
-                    className="rounded-lg shadow-lg h-60 object-cover w-full"
+                    className="rounded-lg shadow-lg h-70 object-cover w-full"
                 />
             </div>
 
             {/* Right Side: Details */}
-            <div className="flex-1 flex flex-col">
+            <div className="md:flex-1 w-full flex flex-col dark:text-white">
                 <div className="flex-grow">
-                    <h1 className="text-xl font-semibold">{tutorName}</h1>
-                    <p className="text-gray-700 font-light">Language: {language}</p>
+                    <h1 className="text-xl font-semibold">Teacher: {tutorName}</h1>
+                    <p className="text-gray-700 dark:text-slate-200 font-light">Language: {language}</p>
                     <h3 className="font-bold text-lg">Fee: ${tutorFee} Per Hour</h3>
                     <p>{description}</p>
                 </div>

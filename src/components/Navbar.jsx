@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import NavProfile from '../pages/Auth/NavProfile';
 import ThemeToggle from '../context/ThemeToggle';
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 
 const Navbar = () => {
@@ -44,7 +46,7 @@ const Navbar = () => {
                                 {links}
                             </ul>
                         </div>
-                        <Link to={'/'} className="font-bold text-3xl">SpeakEasy</Link>
+                        <Link to={'/'} className="font-bold text-sm md:text-3xl">SpeakEasy</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-4">
@@ -58,11 +60,14 @@ const Navbar = () => {
                         <div className='flex justify-center items-center'>
                             {
                                 user ?
-                                    <NavProfile
-                                        user={user}
-                                        signOutUser={signOutUser}
-                                        loading={loading}>
-                                    </NavProfile>
+                                    <>
+                                        <Tooltip className="z-50" id="my-tooltip" />
+                                        <NavProfile
+                                            user={user}
+                                            signOutUser={signOutUser}
+                                            loading={loading}>
+                                        </NavProfile>
+                                    </>
                                     :
                                     <div>
                                         {
