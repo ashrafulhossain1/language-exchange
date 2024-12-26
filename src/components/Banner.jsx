@@ -24,7 +24,7 @@ const Banner = () => {
             >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
                         {/* Gradient Overlay */}
                         <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
                         {/* Image */}
@@ -50,7 +50,7 @@ const Banner = () => {
 
                 {/* Slide 2 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
                         {/* Gradient Overlay */}
                         <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
                         {/* Image */}
@@ -76,7 +76,7 @@ const Banner = () => {
 
                 {/* Slide 3 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
                         {/* Gradient Overlay */}
                         <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
                         {/* Image */}

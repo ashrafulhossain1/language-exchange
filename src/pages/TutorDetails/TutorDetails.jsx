@@ -61,12 +61,7 @@ const TutorDetails = () => {
             .catch(error => {
                 // console.log(error)
             })
-
     }
-
-
-
-
 
     return (
         <div className="flex flex-col md:flex-row items-center p-4 gap-4 max-w-screen-xl mx-auto border">
@@ -75,7 +70,7 @@ const TutorDetails = () => {
                 <img
                     src={image || tutorImage}
                     alt={tutorName}
-                    className="rounded-lg shadow-lg w-full"
+                    className="rounded-lg shadow-lg h-60 object-cover w-full"
                 />
             </div>
 

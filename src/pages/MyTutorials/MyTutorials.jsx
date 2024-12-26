@@ -24,11 +24,8 @@ const MyTutorials = () => {
         }
     }
 
-
     // delete function and again data fetch
-
     const handleDelete = (id) => {
-        // console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -39,7 +36,6 @@ const MyTutorials = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 axios.delete(`https://language-express-server-a-10.vercel.app/delete-tutor/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
@@ -58,11 +54,10 @@ const MyTutorials = () => {
         });
     }
 
-
     if (tutorials.length == 0) {
         return (
-            <div>
-                <h1 className="text-4xl text-center">
+            <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+                <h1 className="text-4xl text-center text-gray-800 dark:text-white">
                     {loading ? <p>wait</p> : "You haven't added any Tutorial yet"}
                 </h1>
             </div>
@@ -70,12 +65,12 @@ const MyTutorials = () => {
     }
 
     return (
-        <div className="bg-gray-100 min-h-screen">
-            <h1 className="text-2xl font-bold text-center mb-6">My Tutorials</h1>
+        <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+            <h1 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">My Tutorials</h1>
             <div className='overflow-x-auto'>
-                <table className="w-full bg-white shadow-lg rounded-lg overflow-x-auto">
+                <table className="w-full bg-white shadow-lg rounded-lg dark:bg-gray-800 dark:text-white">
                     <thead>
-                        <tr className="bg-gray-200 text-gray-700 text-sm md:text-base">
+                        <tr className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white text-sm md:text-base">
                             <th className="p-2">Name</th>
                             <th className="p-2">Image</th>
                             <th className="p-2">Language</th>
@@ -91,7 +86,7 @@ const MyTutorials = () => {
                                 tutorial={tutorial}
                                 key={tutorial._id}
                                 handleDelete={handleDelete}
-                            ></MYTutorialData>
+                            />
                         ))}
                     </tbody>
                 </table>
