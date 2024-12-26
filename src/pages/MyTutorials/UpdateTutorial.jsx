@@ -87,6 +87,7 @@ const UpdateTutorial = () => {
                         type="url"
                         placeholder="Enter Tutorial Image URL"
                         className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
                     />
                 </div>
 
@@ -120,6 +121,7 @@ const UpdateTutorial = () => {
                         type="number"
                         placeholder="Enter Price"
                         className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
                     />
                 </div>
 
@@ -132,6 +134,7 @@ const UpdateTutorial = () => {
                         placeholder="Enter Tutorial Description"
                         rows="4"
                         className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required
                     ></textarea>
                 </div>
 
@@ -145,6 +148,7 @@ const UpdateTutorial = () => {
                         value={singleTutor?.review}
                         readOnly
                         className="w-full px-4 py-2 mt-1 border rounded-md bg-gray-200 text-gray-700"
+                        required
                     />
                 </div>
 

@@ -13,10 +13,6 @@ const NavProfile = ({ user, signOutUser, loading }) => {
     }
 
 
-    if (loading) {
-        return <p>loading please</p>
-    }
-
     return (
         <>
             <div className="dropdown dropdown-end m-0 p-0">

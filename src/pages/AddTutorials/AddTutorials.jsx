@@ -40,7 +40,7 @@ const AddTutorials = () => {
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 min-h-screen">
-            <div className="max-w-lg mx-auto mt-10 p-6 bg-white dark:bg-gray-900 rounded shadow-md">
+            <div className="max-w-lg mx-auto  py-5 p-6 bg-white dark:bg-gray-900 rounded shadow-md">
                 <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-gray-200">Add Tutorial</h2>
                 <form onSubmit={handleAddTutorial}>
                     {/* Name Field */}
@@ -75,6 +75,7 @@ const AddTutorials = () => {
                             type="url"
                             placeholder="Enter Tutorial Image URL"
                             className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+                            required
                         />
                     </div>
 
@@ -108,6 +109,7 @@ const AddTutorials = () => {
                             type="number"
                             placeholder="Enter Price"
                             className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+                            required
                         />
                     </div>
 
@@ -119,6 +121,7 @@ const AddTutorials = () => {
                             placeholder="Enter Tutorial Description"
                             rows="4"
                             className="w-full px-4 py-2 mt-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+                            required
                         ></textarea>
                     </div>
 

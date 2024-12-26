@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 
-const BookedTableRow = ({ books, handleReviewCount, error }) => {
+const BookedTableRow = ({ books, handleReviewCount, error, fetchLoading }) => {
 
     if (error) {
         return (
@@ -20,12 +20,22 @@ const BookedTableRow = ({ books, handleReviewCount, error }) => {
             <tbody>
                 <tr>
                     <td colSpan='6' className='text-xl md:text-3xl text-center text-white'>
-                        No Tutor yet Not Booked
+                        {fetchLoading ? <p>wait </p> : 'No Tutor yet Not Booked'}
                     </td>
                 </tr>
             </tbody>
         );
     }
+
+    //     if (tutorials.length == 0) {
+    //     return (
+    //         <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+    //             <h1 className="text-4xl text-center text-gray-800 dark:text-white">
+    //                 {loading ? <p>wait</p> : "You haven't added any Tutorial yet"}
+    //             </h1>
+    //         </div>
+    //     )
+    // }
 
     return (
         <>

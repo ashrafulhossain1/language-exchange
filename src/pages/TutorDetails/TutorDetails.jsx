@@ -4,6 +4,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const TutorDetails = () => {
     const singleTutorDetails = useLoaderData()
@@ -38,11 +39,15 @@ const TutorDetails = () => {
 
 
     const handleBook = () => {
+
+        if (user?.email === singleTutorDetails?.tutorEmail)
+            return toast.error('Action not permitted!')
+
+
         const bookData = {
             tutorId: _id,
             tutorEmail,
             userEmail: user?.email,
-
         }
 
         axios.post('https://language-express-server-a-10.vercel.app/add-book', bookData)

@@ -58,7 +58,29 @@ const MyTutorials = () => {
         return (
             <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
                 <h1 className="text-4xl text-center text-gray-800 dark:text-white">
-                    {loading ? <p>wait</p> : "You haven't added any Tutorial yet"}
+                    {loading ?
+                        <div className='flex md:flex-col w-11/12 gap-10 mx-auto'>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                        </div>
+
+                        : "You haven't added any Tutorial yet"}
                 </h1>
             </div>
         )

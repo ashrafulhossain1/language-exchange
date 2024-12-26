@@ -2,7 +2,7 @@ import { FaStar } from "react-icons/fa";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TutorCard = ({ tutor }) => {
+const TutorCard = ({ tutor ,fetchingLoad}) => {
     const {
         _id,
         tutorName,
@@ -14,6 +14,25 @@ const TutorCard = ({ tutor }) => {
         review,
     } = tutor;
 
+
+
+    if (fetchingLoad) {
+        return (
+            <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+                <h1 className="text-4xl text-center text-gray-800 dark:text-white">
+                    {fetchLoading ?
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                            
+                        : ""}
+                </h1>
+            </div>
+        )
+    }
     return (
         <div className="border rounded-lg shadow-md p-4 flex flex-col md:flex-row gap-4 dark:bg-gray-800 dark:border-gray-700">
             {/* image */}
@@ -37,8 +56,8 @@ const TutorCard = ({ tutor }) => {
                         </span>
                         <span className="text-gray-500 dark:text-gray-400">Reviews</span>
                     </div>
-                    <Link 
-                        to={`/tutor/${_id}`} 
+                    <Link
+                        to={`/tutor/${_id}`}
                         className="btn w-1/2 border border-black bg-[#FF7AAC] dark:bg-[#FF4C87] text-white">
                         Details
                     </Link>

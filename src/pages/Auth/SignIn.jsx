@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import useAuth from '../../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 const SignIn = () => {
     const { emailPasswordSignIn } = useAuth()
@@ -19,10 +20,11 @@ const SignIn = () => {
         emailPasswordSignIn(email, password)
             .then(result => {
                 // console.log(result.user)
+                toast.success("Welcome Your login Successfully");
                 navigate(reExecute)
             })
             .catch(error => {
-                // console.log(error)
+                return toast.error("Please input correct email and password")
             })
 
     }
@@ -30,11 +32,9 @@ const SignIn = () => {
 
     return (
         <div>
-            {/* something */}
-            <div></div>
             {/* login */}
             <div>
-                <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50">
+                <div className="flex justify-center items-center py-4 md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50">
                     {/* Form Container */}
                     <div className="card w-full max-w-md p-8 bg-white shadow-2xl rounded-xl border-t-4 border-purple-500">
                         <h1 className="md:text-3xl text-xl text-center font-serif font-bold mb-6 text-purple-600">

@@ -11,6 +11,7 @@ const BookTutors = () => {
     const { user } = useAuth();
     const [books, setBooks] = useState([]);
     const [error, setError] = useState('');
+    const [fetchLoading, setFetchLoading] = useState(true)
 
     useEffect(() => {
         fetchMyBooks();
@@ -21,6 +22,7 @@ const BookTutors = () => {
         try {
             const { data } = await axiosInterceptor.get(`/myBooked/${user.email}`);
             setBooks(data);
+            setFetchLoading(false)
         } catch (error) {
             setError(error.message);
             toast.error(`Error: ${error.message}`);
@@ -36,6 +38,41 @@ const BookTutors = () => {
             toast.error('Something went wrong while updating the review count.');
         }
     };
+
+
+
+    if (books.length == 0) {
+        return (
+            <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+                <h1 className="text-4xl text-center text-gray-800 dark:text-white">
+                    {fetchLoading ?
+                        <div className='flex md:flex-col gap-10 mx-auto'>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                            <div className='flex flex-col md:flex-row justify-between gap-4'>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                                <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
+                            </div>
+                        </div>
+                        : "You haven't added any book in booked list"}
+                </h1>
+            </div>
+        )
+    }
+
+
 
     return (
         <div className="p-1 md:p-4 lg:p-6  dark:bg-gray-950 dark:text-white">
@@ -56,6 +93,7 @@ const BookTutors = () => {
                         error={error}
                         handleReviewCount={handleReviewCount}
                         books={books}
+                        fetchLoading={fetchLoading}
                     />
                 </table>
             </div>

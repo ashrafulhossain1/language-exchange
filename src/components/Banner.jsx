@@ -34,7 +34,7 @@ const Banner = () => {
                             alt="Football Equipment"
                         />
                         {/* Content */}
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-30 text-white px-4 w-full md:w-5/12 user-select">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Discover Premium Football Equipment
                             </h2>
@@ -60,7 +60,7 @@ const Banner = () => {
                             alt="Cricket Equipment"
                         />
                         {/* Content */}
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-30 text-white px-4 w-full md:w-5/12 user-select">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Ultimate Cricket Gear Collection
                             </h2>
@@ -86,7 +86,7 @@ const Banner = () => {
                             alt="Badminton Equipment"
                         />
                         {/* Content */}
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-30 text-white px-4 w-full md:w-5/12 user-select">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Badminton Essentials for Every Player
                             </h2>

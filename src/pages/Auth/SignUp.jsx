@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { emailPasswordSignUp, updateNameAndPhoto } = useAuth()
@@ -15,9 +16,24 @@ const SignUp = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.table({ name, photo, email, password })
 
         const userInfo = { name, email }
+
+
+        if (!/[A-Z]/.test(password)) {
+            return toast.error('Must have an Uppercase letter in the password!')
+        }
+        if (!/[a-z]/.test(password)) {
+            return toast.error("Must have a Lowercase letter in the password");
+        }
+        if (password.length < 6) {
+            return toast.error("Length must be at least 6 character");
+        }
+
+
+
+
+
         // create user and update Profile
         emailPasswordSignUp(email, password)
             .then(result => {
@@ -35,7 +51,7 @@ const SignUp = () => {
                     .then(res => {
                         // console.log(res.data)
                     })
-
+                toast.success("Welcome Your Registration Successfully");
                 navigate('/')
             })
             .catch(error => {

@@ -6,11 +6,13 @@ import axios from 'axios';
 const FindTutors = () => {
     const [tutors, setTutors] = useState([]);
     const [search, setSearch] = useState('');
+    const [fetchingLoad, setFetchingLoad] = useState(true)
 
     useEffect(() => {
         const fetchJobs = async () => {
             const { data } = await axios.get(`https://language-express-server-a-10.vercel.app/tutors?search=${search}`);
             setTutors(data);
+            setFetchingLoad(false)
         };
         fetchJobs();
     }, [search]);
@@ -18,12 +20,13 @@ const FindTutors = () => {
     return (
         <div className="bg-gray-100 dark:bg-gray-900 text-base-content dark:text-slate-50 min-h-screen">
             {/* heading title and description */}
-            <div className="py-8">
-                <label className="input input-bordered flex items-center gap-2 md:w-1/2 w-full mx-auto">
+            <div className="py-8  md:w-1/2 w-full">
+                <h1 className='text-lg pb-1 mb-2 flex border-l-2 pl-2'>You can Find tutors According Language</h1>
+                <label className="input input-bordered flex items-center gap-2mx-auto">
                     <input
                         onChange={(e) => setSearch(e.target.value)}
                         type="text"
-                        className="grow dark:bg-gray-800 dark:text-slate-50"
+                        className="grow dark:text-black"
                         placeholder="Input any Language Name"
                     />
                     <svg
@@ -42,7 +45,7 @@ const FindTutors = () => {
             {/* all tutors container */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-16">
                 {
-                    tutors.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
+                    tutors.map(tutor => <TutorCard fetchingLoad={fetchingLoad} key={tutor._id} tutor={tutor}></TutorCard>)
                 }
             </div>
         </div>
