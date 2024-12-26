@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Banner from '../../components/Banner';
 import CountUpComp from './CountUpComp';
 import Category from './Category';
+import FAQ from './FAQ';
+import Steps from './Steps';
 
 
 const Home = () => {
@@ -9,8 +11,8 @@ const Home = () => {
     return (
         <div>
             {/* banner */}
-            <div className='hidden'>
-                {/* <Banner></Banner> */}
+            <div >
+                <Banner></Banner>
             </div>
             {/* count-Up-here */}
             <div>
@@ -19,6 +21,14 @@ const Home = () => {
             {/* category */}
             <div>
                 <Category></Category>
+            </div>
+            {/* How Its Works */}
+            <div>
+            <Steps></Steps>
+            </div>
+            {/* faq */}
+            <div>
+                <FAQ></FAQ>
             </div>
         </div>
     );

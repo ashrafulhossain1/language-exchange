@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import BookedTableRow from './BookedTableRow';
 import useAxiosInterceptor from '../../hooks/useAxiosInterceptor';
+import toast, { Toaster } from 'react-hot-toast';
 // import BookedTableRow from './BookedTableRow';
 // import BookedTableRow from './BookedTableRow';
 
@@ -39,7 +40,7 @@ const BookTutors = () => {
     const handleReviewCount = async (tutorId) => {
         try {
             const { data } = await axios.patch(`https://language-express-server-a-10.vercel.app/review/${tutorId}`)
-            // console.log(data)
+            toast.success('Thanks For Reviewing!!!')
             fetchMyBooks()
         }
         catch (error) {
