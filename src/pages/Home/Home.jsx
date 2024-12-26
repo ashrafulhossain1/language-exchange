@@ -4,12 +4,16 @@ import CountUpComp from './CountUpComp';
 import Category from './Category';
 import FAQ from './FAQ';
 import Steps from './Steps';
+import { Helmet } from 'react-helmet-async';
 
 
 const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home | Learn Language</title>
+            </Helmet>
             {/* banner */}
             <div >
                 <Banner></Banner>

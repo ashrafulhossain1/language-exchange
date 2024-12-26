@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const AddTutorials = () => {
     const { user } = useAuth();
@@ -40,6 +41,9 @@ const AddTutorials = () => {
 
     return (
         <div className="bg-gray-100 dark:bg-gray-800 min-h-screen">
+            <Helmet>
+                <title>Add Tutorial</title>
+            </Helmet>
             <div className="max-w-lg mx-auto  py-5 p-6 bg-white dark:bg-gray-900 rounded shadow-md">
                 <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-gray-200">Add Tutorial</h2>
                 <form onSubmit={handleAddTutorial}>

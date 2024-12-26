@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const TutorDetails = () => {
     const singleTutorDetails = useLoaderData()
@@ -23,19 +24,7 @@ const TutorDetails = () => {
         review,
     } = singleTutorDetails;
 
-    // post request for booked tutor
-    // const handleBook = () => {
-    //     const bookData = {
-    //         tutorId: _id,
-    //         tutorName,
-    //         image,
-    //         language,
-    //         tutorFee,
-    //         review,
-    //         tutorEmail,
-    //         userEmail: user?.email,
 
-    //     }
 
 
     const handleBook = () => {
@@ -70,6 +59,9 @@ const TutorDetails = () => {
 
     return (
         <div className="flex flex-col md:flex-row items-center p-4 gap-4 max-w-screen-xl mx-auto border mt-20">
+            <Helmet>
+                <title>Tutor Details</title>
+            </Helmet>
             {/* Left Side: Image */}
             <div className="flex-shrink-0 w-full md:w-1/3">
                 <img

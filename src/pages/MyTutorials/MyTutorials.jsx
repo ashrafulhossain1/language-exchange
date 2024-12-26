@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import MYTutorialData from './MYTutorialData';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const MyTutorials = () => {
     const { user } = useAuth()
@@ -15,7 +16,7 @@ const MyTutorials = () => {
 
     const fetchMyTutorials = async () => {
         try {
-            const { data } = await axios.get(`https://language-express-server-a-10.vercel.app/tutors/${user.email}`)
+            const { data } = await axios.get(`https://language-express-server-a-10.vercel.app/tutors/${user.email}`,{withCredentials:true})
             setTutorials(data)
             setLoading(false)
         }
@@ -57,6 +58,9 @@ const MyTutorials = () => {
     if (tutorials.length == 0) {
         return (
             <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+                <Helmet>
+                    <title>My Tutorials</title>
+                </Helmet>
                 <h1 className="text-4xl text-center text-gray-800 dark:text-white">
                     {loading ?
                         <div className='flex md:flex-col w-11/12 gap-10 mx-auto'>

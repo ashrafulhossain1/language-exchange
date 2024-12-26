@@ -4,6 +4,7 @@ import axios from 'axios';
 import BookedTableRow from './BookedTableRow';
 import useAxiosInterceptor from '../../hooks/useAxiosInterceptor';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const axiosInterceptor = useAxiosInterceptor();
 
@@ -26,6 +27,8 @@ const BookTutors = () => {
         } catch (error) {
             setError(error.message);
             toast.error(`Error: ${error.message}`);
+            setFetchLoading(false)
+
         }
     };
 
@@ -44,6 +47,9 @@ const BookTutors = () => {
     if (books.length == 0) {
         return (
             <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+                <Helmet>
+                    <title>My Booked Tutor</title>
+                </Helmet>
                 <h1 className="text-4xl text-center text-gray-800 dark:text-white">
                     {fetchLoading ?
                         <div className='flex md:flex-col gap-10 mx-auto'>
@@ -66,7 +72,12 @@ const BookTutors = () => {
                                 <div className="skeleton h-4 md:h-6 w-16 md:w-32"></div>
                             </div>
                         </div>
-                        : "You haven't added any book in booked list"}
+                        : <>
+                        {
+                            error ? <p>{error}</p> : <p>"You haven't added any book in booked list"</p>
+                        }
+                        
+                        </>}
                 </h1>
             </div>
         )

@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateTutorial = () => {
     const { user } = useAuth()
@@ -52,6 +53,9 @@ const UpdateTutorial = () => {
 
     return (
         <div className="max-w-lg mx-auto mt-10 p-6 bg-gray-100 rounded shadow-md">
+            <Helmet>
+                <title>Update Tutorial</title>
+            </Helmet>
             <h2 className="text-2xl font-semibold text-center mb-6">Add Tutorial</h2>
             <form onSubmit={handleSubmit}>
                 {/* Name Field */}

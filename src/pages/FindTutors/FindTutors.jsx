@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TutorCard from '../../components/TutorCard';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const FindTutors = () => {
     const [tutors, setTutors] = useState([]);
@@ -18,7 +19,8 @@ const FindTutors = () => {
     }, [search]);
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-900 text-base-content dark:text-slate-50 min-h-screen">
+        <div className="bg-gray-100 dark:bg-black text-base-content dark:text-slate-50 min-h-screen">
+            <Helmet><title>Find Tutors</title></Helmet>
             {/* heading title and description */}
             <div className="py-8  md:w-1/2 w-full">
                 <h1 className='text-lg pb-1 mb-2 flex border-l-2 pl-2'>You can Find tutors According Language</h1>

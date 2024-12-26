@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const SignIn = () => {
     const { emailPasswordSignIn } = useAuth()
@@ -33,6 +34,9 @@ const SignIn = () => {
     return (
         <div>
             {/* login */}
+            <Helmet>
+                <title>Sign In Page</title>
+            </Helmet>
             <div>
                 <div className="flex justify-center items-center py-4 md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50">
                     {/* Form Container */}

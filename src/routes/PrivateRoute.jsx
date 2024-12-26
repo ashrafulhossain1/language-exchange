@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
     // console.log(location)
 
     if (loading) {
-        return <div className="skeleton bg-teal-600 bg-opacity-5 h-16 w-16 shrink-0 rounded-full"></div>
+        return <div className="skeleton flex mx-auto text-center bg-teal-600 bg-opacity-5 h-16 w-16 shrink-0 rounded-full"></div>
     }
     if (user) { 
         return children

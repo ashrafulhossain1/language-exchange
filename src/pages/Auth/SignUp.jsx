@@ -4,6 +4,7 @@ import GoogleSignIn from './GoogleSignIn';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
     const { emailPasswordSignUp, updateNameAndPhoto } = useAuth()
@@ -64,7 +65,9 @@ const SignUp = () => {
     return (
         <div>
             {/* others */}
-            <div></div>
+            <Helmet>
+                <title>Sign In User</title>
+            </Helmet>
             {/* signUp */}
             <div>
                 <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 py-8">
