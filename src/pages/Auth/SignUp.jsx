@@ -57,6 +57,7 @@ const SignUp = () => {
             })
             .catch(error => {
                 // console.log(error)
+                toast.error('Something wrong ,please try to signup using another email')
             })
 
 
