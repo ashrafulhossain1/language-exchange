@@ -9,6 +9,15 @@ SpeakEasy is an interactive and user-friendly online platform designed to connec
 [Vercel API](https://language-express-server-a-10.vercel.app)
 
 ---
+## 🛠️ Technologies Used
+
+- **Frontend**: React, React Router, Tailwind CSS, React Tooltip, React Icons.
+- **Backend**: Node.js, Express.js.
+- **Database**: MongoDB.
+- **Authentication**: Firebase Authentication, JWT.
+- **Hosting**: Firebase (frontend), Vercel (backend).
+
+---
 
 ## ✨ Key Features
 
@@ -68,15 +77,6 @@ SpeakEasy is an interactive and user-friendly online platform designed to connec
 
 ---
 
-## 🛠️ Technologies Used
-
-- **Frontend**: React, React Router, Tailwind CSS, React Tooltip, React Icons.
-- **Backend**: Node.js, Express.js.
-- **Database**: MongoDB.
-- **Authentication**: Firebase Authentication, JWT.
-- **Hosting**: Firebase (frontend), Vercel (backend).
-
----
 
 ## 🔧 Environment Setup
 
