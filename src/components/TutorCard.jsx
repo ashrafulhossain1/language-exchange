@@ -36,8 +36,8 @@ const TutorCard = ({ tutor ,fetchingLoad}) => {
     return (
         <div className="border rounded-lg shadow-md bg-white p-4 flex flex-col md:flex-row gap-4 dark:bg-gray-800 dark:border-gray-700">
             {/* image */}
-            <div className="flex-1">
-                <img className="h-60 w-full rounded-md" src={image} alt={tutorName} />
+            <div className="flex-1 ">
+                <img className="h-60 w-full object-cover rounded-md" src={image} alt={tutorName} />
             </div>
 
             {/* tutor details */}
