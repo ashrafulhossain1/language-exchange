@@ -6,13 +6,13 @@ import Footer from '../components/Footer';
 const MainLayout = () => {
     return (
         <div className='dark:bg-black '>
-            <div>
+            <div className='sticky top-0 left-0 z-50'>
                 <Navbar></Navbar>
             </div>
             <div className='min-h-[500px] max-w-screen-2xl dark:bg-black mx-auto'>
                 <Outlet></Outlet>
             </div>
-            <div>
+            <div className='bg-white dark:bg-slate-950 text-base-content dark:text-slate-50'>
                 <Footer></Footer>
             </div>
         </div>

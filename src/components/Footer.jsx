@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="footer max-w-screen-2xl justify-between border mx-auto bg-base-200 dark:bg-slate-950 text-base-content dark:text-slate-50 p-10">
+        <footer className="footer max-w-screen-2xl justify-between mx-auto  p-10">
             <aside>
                 <img
                     className="w-20 h-16"
@@ -14,7 +14,7 @@ const Footer = () => {
                 </p>
             </aside>
             <nav>
-                <h6 className="footer-title text-gray-800 dark:text-slate-50">Services</h6>
+                <h6 className="footer-title text-gray-700 dark:text-slate-50">Services</h6>
                 <a className="link link-hover text-gray-600 dark:text-slate-400">Language Learning</a>
                 <a className="link link-hover text-gray-600 dark:text-slate-400">Cultural Exchange</a>
                 <a className="link link-hover text-gray-600 dark:text-slate-400">Online Courses</a>
