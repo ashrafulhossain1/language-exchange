@@ -19,7 +19,7 @@ const FindTutors = () => {
     }, [search]);
 
     return (
-        <div className="bg-gray-100 dark:bg-black text-base-content dark:text-slate-50 min-h-screen">
+        <div className=" dark:bg-black text-base-content dark:text-slate-50 min-h-screen">
             <Helmet><title>Find Tutors</title></Helmet>
             {/* heading title and description */}
             <div className="py-8  md:w-1/2 w-full">

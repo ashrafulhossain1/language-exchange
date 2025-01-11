@@ -18,7 +18,7 @@ const TutorCard = ({ tutor ,fetchingLoad}) => {
 
     if (fetchingLoad) {
         return (
-            <div className="dark:bg-gray-900 bg-gray-100 min-h-screen">
+            <div className="dark:bg-gray-900 bg-white min-h-screen">
                 <h1 className="text-4xl text-center text-gray-800 dark:text-white">
                     {fetchLoading ?
                             <div className='flex flex-col md:flex-row justify-between gap-4'>
@@ -34,7 +34,7 @@ const TutorCard = ({ tutor ,fetchingLoad}) => {
         )
     }
     return (
-        <div className="border rounded-lg shadow-md p-4 flex flex-col md:flex-row gap-4 dark:bg-gray-800 dark:border-gray-700">
+        <div className="border rounded-lg shadow-md bg-white p-4 flex flex-col md:flex-row gap-4 dark:bg-gray-800 dark:border-gray-700">
             {/* image */}
             <div className="flex-1">
                 <img className="h-60 w-full rounded-md" src={image} alt={tutorName} />
