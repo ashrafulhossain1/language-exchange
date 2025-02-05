@@ -161,27 +161,96 @@ These are tools used during development:
 
 ## 🌐 API Endpoints
 
-### **Users**
-- **GET `/users`**: Fetch all users.
-- **GET `/users/:email`**: Fetch a specific user by email.
-- **POST `/users`**: Add a new user.
-
-### **Tutors**
-- **GET `/tutors`**: Fetch all tutors (with optional filtering by category or search).
-- **GET `/tutors/:email`**: Fetch tutorials added by a specific user.
-- **GET `/tutor/:id`**: Fetch details of a specific tutor by ID.
-- **POST `/add-tutorials`**: Add a new tutor/tutorial.
-- **PUT `/updateTutorial/:id`**: Update an existing tutor/tutorial by ID.
-- **DELETE `/delete-tutor/:id`**: Delete a tutor/tutorial by ID.
-
-### **Bookings**
-- **POST `/add-book`**: Add a new booking.
-- **GET `/myBooked/:email`**: Fetch bookings made by a specific user.
-
-### **Reviews**
-- **PATCH `/review/:tutorId`**: Increase the review count for a tutor.
+### **Authentication**
+- **POST `/jwt`**: Generate a JWT token and set it as an HTTP-only cookie.
+- **POST `/logout`**: Clear the JWT token cookie to log the user out.
 
 ---
+
+### **Users**
+- **GET `/users`**: Fetch all users (returns the total count of users).
+- **GET `/users/:email`**: Fetch a specific user by email.
+- **POST `/users`**: Add a new user (used during sign-up).
+
+---
+
+### **Tutors**
+- **GET `/tutors`**: Fetch all tutors with optional filtering:
+  - Query Parameters:
+    - `category`: Filter tutors by language category.
+    - `search`: Search tutors by language name (case-insensitive regex).
+- **GET `/tutors/:email`**: Fetch tutorials added by a specific user (private).
+- **GET `/tutor/:id`**: Fetch details of a specific tutor/tutorial by ID.
+- **POST `/add-tutorials`**: Add a new tutor/tutorial (private).
+- **PUT `/updateTutorial/:id`**: Update an existing tutor/tutorial by ID (private).
+- **DELETE `/delete-tutor/:id`**: Delete a tutor/tutorial by ID (private).
+
+---
+
+### **Bookings**
+- **POST `/add-book`**: Add a new booking (private).
+- **GET `/myBooked/:email`**: Fetch bookings made by a specific user (private). The response includes aggregated data from the `tutorials` collection (e.g., tutor name, image, fee, etc.).
+
+---
+
+### **Reviews**
+- **PATCH `/review/:tutorId`**: Increment the review count for a specific tutor by ID.
+
+---
+
+### **Analytics**
+- **GET `/tutorCount`**: Fetch the total number of tutors available.
+- **GET `/reviewsCount`**: Fetch the total number of reviews across all tutors.
+
+---
+
+### **Root Endpoint**
+- **GET `/`**: A health check endpoint that returns "LANGUAGE EXPRESS server Is ON".
+
+---
+
+### **Notes on Authentication**
+- **Private Routes**: The following routes require authentication via JWT token (stored in cookies):
+  - `/tutors/:email`
+  - `/add-tutorials`
+  - `/updateTutorial/:id`
+  - `/delete-tutor/:id`
+  - `/add-book`
+  - `/myBooked/:email`
+
+- **Token Verification**: The `verifyToken` middleware ensures that only authenticated users can access private routes. If the token is missing or invalid, the server responds with a `401 Unauthorized` error.
+
+---
+
+### **CORS Configuration**
+The server allows requests from the following origins:
+- `http://localhost:5173` (development environment)
+- `https://language--exchange-a-11.web.app` (production frontend)
+- `https://language--exchange-a-11.firebaseapp.com` (Firebase hosting)
+
+Credentials (cookies) are enabled for cross-origin requests.
+
+---
+
+### **Database Collections**
+The server interacts with the following MongoDB collections:
+1. **`tutorials`**: Stores tutor/tutorial details.
+2. **`booked`**: Stores booking information.
+3. **`users`**: Stores user account details.
+
+---
+
+### **Environment Variables**
+Ensure the following environment variables are set in your `.env` file:
+```env
+PORT=5000
+USER_USER=your_mongodb_username
+USER_PASS=your_mongodb_password
+JWT_ACCESS_SECRET=your_jwt_secret_key
+```
+
+---
+
 
 ## ⚙️ Deployment Guidelines
 1. Ensure the server is deployed and running without CORS, 404, or 504 errors.
