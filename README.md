@@ -4,7 +4,7 @@ SpeakEasy is a responsive and user-friendly platform designed to connect users w
 ## 🚀 Live Site URL
 [Visit SpeakEasy](https://language--exchange-a-11.web.app)
 
----
+
 ![SpeakEasy Homepage](https://i.ibb.co.com/VYB56PZC/Fire-Shot-Capture-034-Home-Learn-Language-language-exchange-a-11-web-app.png)
 ---
 
