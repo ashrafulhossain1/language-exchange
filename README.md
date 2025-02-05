@@ -19,18 +19,6 @@ SpeakEasy is an interactive and user-friendly online platform designed to connec
 
 ---
 
-## ✨ Key Features
-
-### **User Experience**
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Dark/Light Theme**: Toggle between themes for a comfortable viewing experience.
-- **Smooth Animations**: Enhanced interactivity with modern animations.
-
-### **User Management**
-- **Authentication**: Login and register using email/password or Google.
-- **JWT Authentication**: Secures private routes and API calls.
-- **Error Notifications**: Displays relevant error messages for login, registration, and private routes.
-
 ### **Core Functionality**
 - **Find Tutors**: Browse and filter tutors based on categories and search criteria.
 - **Book Tutors**: Securely book sessions with tutors.
@@ -38,76 +26,51 @@ SpeakEasy is an interactive and user-friendly online platform designed to connec
 - **Manage Tutorials**: Update or delete tutorials from the "My Tutorials" page.
 - **Review System**: Increase review count for tutors to improve visibility.
 
-### **Additional Features**
-- **404 Page**: Custom error page for unmatched routes.
-- **Loading State**: Smooth transitions with appropriate loading indicators.
 
----
-
-## 📋 Pages Overview
-
-### **1. Home Page**
-- Banner/carousel showcasing the platform's benefits.
-- Stats Section: Displays counts for tutors, reviews, languages, and users.
-- Language Categories: Minimum of 9 clickable cards directing to relevant tutors.
-- Additional sections relevant to the website's theme.
-
-### **2. Find Tutors Page**
-- Displays all available tutors.
-- Search functionality to filter tutors by language.
-- "Details" button redirects to the Tutor Details page.
-
-### **3. Tutor Details Page (Private)**
-- Shows detailed information about the selected tutor, including name, image, language, description, price, and reviews.
-- "Book" button stores booking information in the database.
-
-### **4. My Booked Tutors Page (Private)**
-- Displays all booked tutors with options to review them.
-
-### **5. Add Tutorials Page (Private)**
-- A form to add new tutorials, including fields for name, email, image, language, price, and description.
-- Reviews default to 0.
-
-### **6. My Tutorials Page (Private)**
-- Displays a list of tutorials added by the user.
-- Options to update or delete tutorials.
-
-### **7. Update Tutorial Page (Private)**
-- Allows editing fields for an existing tutorial (name and reviews are not editable).
-
----
 
 
 ## 🔧 Environment Setup
 
-### **Clone the Repositories**
-```bash
-# Client
-https://github.com/programming-hero-web-course2/b10-a10-client-side-ashrafulhossain1
+### **Step 1: Clone the Client-Side Repository**
+1. Clone the client-side repository:
+   ```bash
+   git clone https://github.com/ashrafulhossain1/language-exchange-server
+   ```
 
-# Server
-https://github.com/programming-hero-web-course2/b10-a10-server-side-ashrafulhossain1
-```
+2. Navigate to the client directory:
+   ```bash
+   cd language-exchange-server
+   ```
 
-### **Install Dependencies**
-```bash
-# Navigate to the client folder
-cd client
-npm install
+3. Create a `.env` file in the root of the client directory and add the following Firebase credentials:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   ```
 
-# Navigate to the server folder
-cd server
-npm install
-```
+---
 
-### **Environment Variables**
-Create a `.env` file in the root directories and include the following:
+### **Step 2: Install Client-Side Dependencies**
+1. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-#### **Client**
-```
-VITE_API_URL=<Your API URL>
-```
+2. Start the client development server:
+   ```bash
+   npm start
+   ```
 
+---
+
+
+
+
+================================================
 #### **Server**
 ```
 PORT=<Your Server Port>
