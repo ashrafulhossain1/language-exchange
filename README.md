@@ -59,7 +59,7 @@ SpeakEasy is a responsive and user-friendly platform designed to connect users w
    ```
 2. Start the client development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ---
@@ -89,7 +89,7 @@ SpeakEasy is a responsive and user-friendly platform designed to connect users w
    ```
 2. Start the server development server:
    ```bash
-   npm run dev
+   nodemon start
    ```
 
 ---
