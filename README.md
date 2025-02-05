@@ -257,4 +257,6 @@ JWT_ACCESS_SECRET=your_jwt_secret_key
    - Server: [Vercel API](https://language-express-server-a-10.vercel.app)
 
 ---
+You're very welcome! 😊 I'm glad I could help. If you have any more questions or need further assistance with your project, feel free to ask. Best of luck with **SpeakEasy**—it sounds like an amazing platform, and I’m sure it will be a success! 🚀
 
+Happy coding, and take care! 👨‍💻👩‍💻
