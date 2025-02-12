@@ -58,7 +58,7 @@ const TutorCard = ({ tutor ,fetchingLoad}) => {
                     </div>
                     <Link
                         to={`/tutor/${_id}`}
-                        className="btn w-1/2 border border-black bg-[#FF7AAC] dark:bg-[#FF4C87] text-white">
+                        className="btn w-1/2 border border-black bg-[#2F4021] dark:bg-[#C8E0A0] text-white">
                         Details
                     </Link>
                 </div>

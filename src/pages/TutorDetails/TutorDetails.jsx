@@ -84,7 +84,7 @@ const TutorDetails = () => {
                         <span className="text-2xl flex items-center gap-2"><FaStar className=""></FaStar>{review}</span>
                         <span className="text-gray-500">Reviews</span>
                     </div>
-                    <button onClick={handleBook} className="btn w-full border border-black bg-[#FF7AAC]">Book</button>
+                    <button onClick={handleBook} className="btn w-full border border-black bg-[#C8E0A0] hover:bg-[#2F4021]">Book</button>
                 </div>
             </div>
         </div>
