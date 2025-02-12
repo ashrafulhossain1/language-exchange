@@ -14,8 +14,9 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/find-tutors' end>Find Tutors</NavLink></li>
-        <li><NavLink to='/add-tutorials'>Add Tutorials</NavLink></li>
+        <li><NavLink to='/aboutUs' end>About Us</NavLink></li>
         {user && <>
+            <li><NavLink to='/add-tutorials'>Add Tutorials</NavLink></li>
             <li><NavLink to='/my-tutorials'>My Tutorials</NavLink></li>
             <li><NavLink to='/my-books'>My Booked Tutors</NavLink></li>
         </>}

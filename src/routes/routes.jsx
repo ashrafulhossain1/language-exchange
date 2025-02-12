@@ -12,6 +12,7 @@ import Tutors from "../pages/Tutors/Tutors";
 import TutorDetails from "../pages/TutorDetails/TutorDetails";
 import UpdateTutorial from "../pages/MyTutorials/UpdateTutorial";
 import CategoryTutor from "../pages/CategoryTutor/CategoryTutor";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const routes = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const routes = createBrowserRouter([
                 path: '/my-books',
                 element: <PrivateRoute><BookTutors></BookTutors></PrivateRoute>
             },
+            {
+                path: '/aboutUs',
+                element: <AboutUs></AboutUs>
+
+            }, 
             {
                 path: '/signIn',
                 element: <SignIn></SignIn>
