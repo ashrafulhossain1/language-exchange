@@ -1,133 +1,254 @@
 # **SpeakEasy: Online Tutor Booking Platform**
+SpeakEasy is a responsive and user-friendly platform designed to connect users with tutors for various languages and subjects. It simplifies the process of finding, reviewing, and booking tutors, promoting accessible learning opportunities worldwide.
 
-SpeakEasy is an interactive and user-friendly online platform designed to connect users with tutors for various languages and subjects. It simplifies the process of finding, reviewing, and booking tutors, promoting accessible learning opportunities worldwide.
+## 🚀 Live Site URL
+[Visit SpeakEasy](https://language--exchange-a-11.web.app)
 
-## 🚀 Live Website
-[SpeakEasy Live Site](https://language--exchange-a-11.web.app)
 
-## 🌐 API Link
-[Vercel API](https://language-express-server-a-10.vercel.app)
-
+![SpeakEasy Homepage](https://i.ibb.co.com/VYB56PZC/Fire-Shot-Capture-034-Home-Learn-Language-language-exchange-a-11-web-app.png)
 ---
+
 ## 🛠️ Technologies Used
-
-- **Frontend**: React, React Router, Tailwind CSS, React Tooltip, React Icons.
-- **Backend**: Node.js, Express.js.
-- **Database**: MongoDB.
-- **Authentication**: Firebase Authentication, JWT.
-- **Hosting**: Firebase (frontend), Vercel (backend).
+- **React**: For building the user interface.
+- **React Router**: For dynamic and private routing.
+- **Firebase**: For authentication and hosting.
+- **MongoDB**: For data storage.
+- **Tailwind CSS**: For responsive styling.
+- **JWT**: For secure token-based authentication.
 
 ---
 
-## ✨ Key Features
-
-### **User Experience**
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Dark/Light Theme**: Toggle between themes for a comfortable viewing experience.
-- **Smooth Animations**: Enhanced interactivity with modern animations.
-
-### **User Management**
-- **Authentication**: Login and register using email/password or Google.
-- **JWT Authentication**: Secures private routes and API calls.
-- **Error Notifications**: Displays relevant error messages for login, registration, and private routes.
-
-### **Core Functionality**
-- **Find Tutors**: Browse and filter tutors based on categories and search criteria.
-- **Book Tutors**: Securely book sessions with tutors.
-- **Add Tutorials**: Logged-in users can add tutorial details.
-- **Manage Tutorials**: Update or delete tutorials from the "My Tutorials" page.
+## ✨ Features
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
+- **User Authentication**: Supports Email/Password login and Google login with error and success notifications.
+- **Tutor Management**: Add, update, delete, and view tutor details, with a personalized list for logged-in users.
+- **Booking System**: Securely book sessions with tutors.
 - **Review System**: Increase review count for tutors to improve visibility.
-
-### **Additional Features**
-- **404 Page**: Custom error page for unmatched routes.
-- **Loading State**: Smooth transitions with appropriate loading indicators.
+- **Sorting & Filtering**: Tutors can be filtered by category or searched dynamically.
+- **Dark/Light Mode**: Toggle between dark and light themes on the homepage.
 
 ---
-
-## 📋 Pages Overview
-
-### **1. Home Page**
-- Banner/carousel showcasing the platform's benefits.
-- Stats Section: Displays counts for tutors, reviews, languages, and users.
-- Language Categories: Minimum of 9 clickable cards directing to relevant tutors.
-- Additional sections relevant to the website's theme.
-
-### **2. Find Tutors Page**
-- Displays all available tutors.
-- Search functionality to filter tutors by language.
-- "Details" button redirects to the Tutor Details page.
-
-### **3. Tutor Details Page (Private)**
-- Shows detailed information about the selected tutor, including name, image, language, description, price, and reviews.
-- "Book" button stores booking information in the database.
-
-### **4. My Booked Tutors Page (Private)**
-- Displays all booked tutors with options to review them.
-
-### **5. Add Tutorials Page (Private)**
-- A form to add new tutorials, including fields for name, email, image, language, price, and description.
-- Reviews default to 0.
-
-### **6. My Tutorials Page (Private)**
-- Displays a list of tutorials added by the user.
-- Options to update or delete tutorials.
-
-### **7. Update Tutorial Page (Private)**
-- Allows editing fields for an existing tutorial (name and reviews are not editable).
-
----
-
 
 ## 🔧 Environment Setup
 
-### **Clone the Repositories**
-```bash
-# Client
-https://github.com/programming-hero-web-course2/b10-a10-client-side-ashrafulhossain1
+### **Step 1: Clone the Client-Side Repository**
+1. Clone the client-side repository:
+   ```bash
+   git clone https://github.com/ashrafulhossain1/language-exchange.git
+   ```
+2. Navigate to the client directory:
+   ```bash
+   cd b10-a10-client-side-ashrafulhossain1
+   ```
+3. Create a `.env` file in the root of the client directory and add the following Firebase credentials:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   ```
 
-# Server
-https://github.com/programming-hero-web-course2/b10-a10-server-side-ashrafulhossain1
+---
+
+### **Step 2: Install Client-Side Dependencies**
+1. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the client development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+### **Step 3: Clone the Server-Side Repository**
+1. Clone the server-side repository:
+   ```bash
+   git clone https://github.com/ashrafulhossain1/sports-express-server
+   ```
+2. Navigate to the server directory:
+   ```bash
+   cd b10-a10-server-side-ashrafulhossain1
+   ```
+3. Create a `.env` file in the root of the server directory and add the following variables:
+   ```env
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   ```
+
+---
+
+### **Step 4: Install Server-Side Dependencies**
+1. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the server development server:
+   ```bash
+   nodemon start
+   ```
+
+---
+
+## 📦 Dependencies & Dev Dependencies
+
+### **Client-Side (React App)**
+
+#### **Dependencies**
+These are the main libraries used to build the application:
+```json
+"dependencies": {
+  "firebase": "^9.23.0",                  // Firebase for authentication and hosting
+  "react": "^18.2.0",                     // React library for building the UI
+  "react-dom": "^18.2.0",                 // React DOM for rendering components
+  "react-router-dom": "^6.14.2",          // React Router for dynamic routing
+  "react-toastify": "^9.1.3",             // For displaying notifications (e.g., success/error messages)
+  "react-tooltip": "^5.12.0",             // Tooltips for interactive UI elements
+  "react-icons": "^4.10.1",               // Icons for enhanced UI
+  "tailwindcss": "^3.3.3",                // Utility-first CSS framework for styling
+  "axios": "^1.5.1",                      // HTTP client for API requests
+  "dotenv": "^16.3.1"                     // Environment variable management
+}
 ```
 
-### **Install Dependencies**
-```bash
-# Navigate to the client folder
-cd client
-npm install
-
-# Navigate to the server folder
-cd server
-npm install
-```
-
-### **Environment Variables**
-Create a `.env` file in the root directories and include the following:
-
-#### **Client**
-```
-VITE_API_URL=<Your API URL>
-```
-
-#### **Server**
-```
-PORT=<Your Server Port>
-MONGO_URI=<Your MongoDB URI>
-JWT_SECRET=<Your JWT Secret>
-```
-
-### **Run the Application**
-```bash
-# Client
-npm run dev
-
-# Server
-npm run start
+#### **Dev Dependencies**
+These are tools used during development:
+```json
+"devDependencies": {
+  "autoprefixer": "^10.4.14",             // PostCSS plugin for adding vendor prefixes
+  "postcss": "^8.4.26",                   // Tool for transforming CSS
+  "tailwindcss": "^3.3.3",                // Tailwind CSS for utility-based styling
+  "eslint": "^8.47.0",                    // Linter for identifying and fixing code issues
+  "eslint-config-prettier": "^8.10.0",    // ESLint configuration for Prettier integration
+  "prettier": "^3.0.3"                    // Code formatter for consistent styling
+}
 ```
 
 ---
 
-## ⚠️ Deployment Guidelines
+### **Server-Side (Node.js App)**
 
+#### **Dependencies**
+These are the main libraries used to build the backend:
+```json
+"dependencies": {
+  "express": "^4.18.2",                   // Web framework for Node.js
+  "cors": "^2.8.5",                       // Middleware for enabling CORS
+  "jsonwebtoken": "^9.0.0",               // JSON Web Token for authentication
+  "cookie-parser": "^1.4.6",              // Middleware for parsing cookies
+  "dotenv": "^16.3.1",                    // Environment variable management
+  "mongodb": "^5.7.0"                     // MongoDB driver for database operations
+}
+```
+
+#### **Dev Dependencies**
+These are tools used during development:
+```json
+"devDependencies": {
+  "nodemon": "^3.0.1"                     // Automatically restarts the server during development
+}
+```
+
+---
+
+## 🌐 API Endpoints
+
+### **Authentication**
+- **POST `/jwt`**: Generate a JWT token and set it as an HTTP-only cookie.
+- **POST `/logout`**: Clear the JWT token cookie to log the user out.
+
+---
+
+### **Users**
+- **GET `/users`**: Fetch all users (returns the total count of users).
+- **GET `/users/:email`**: Fetch a specific user by email.
+- **POST `/users`**: Add a new user (used during sign-up).
+
+---
+
+### **Tutors**
+- **GET `/tutors`**: Fetch all tutors with optional filtering:
+  - Query Parameters:
+    - `category`: Filter tutors by language category.
+    - `search`: Search tutors by language name (case-insensitive regex).
+- **GET `/tutors/:email`**: Fetch tutorials added by a specific user (private).
+- **GET `/tutor/:id`**: Fetch details of a specific tutor/tutorial by ID.
+- **POST `/add-tutorials`**: Add a new tutor/tutorial (private).
+- **PUT `/updateTutorial/:id`**: Update an existing tutor/tutorial by ID (private).
+- **DELETE `/delete-tutor/:id`**: Delete a tutor/tutorial by ID (private).
+
+---
+
+### **Bookings**
+- **POST `/add-book`**: Add a new booking (private).
+- **GET `/myBooked/:email`**: Fetch bookings made by a specific user (private). The response includes aggregated data from the `tutorials` collection (e.g., tutor name, image, fee, etc.).
+
+---
+
+### **Reviews**
+- **PATCH `/review/:tutorId`**: Increment the review count for a specific tutor by ID.
+
+---
+
+### **Analytics**
+- **GET `/tutorCount`**: Fetch the total number of tutors available.
+- **GET `/reviewsCount`**: Fetch the total number of reviews across all tutors.
+
+---
+
+### **Root Endpoint**
+- **GET `/`**: A health check endpoint that returns "LANGUAGE EXPRESS server Is ON".
+
+---
+
+### **Notes on Authentication**
+- **Private Routes**: The following routes require authentication via JWT token (stored in cookies):
+  - `/tutors/:email`
+  - `/add-tutorials`
+  - `/updateTutorial/:id`
+  - `/delete-tutor/:id`
+  - `/add-book`
+  - `/myBooked/:email`
+
+- **Token Verification**: The `verifyToken` middleware ensures that only authenticated users can access private routes. If the token is missing or invalid, the server responds with a `401 Unauthorized` error.
+
+---
+
+### **CORS Configuration**
+The server allows requests from the following origins:
+- `http://localhost:5173` (development environment)
+- `https://language--exchange-a-11.web.app` (production frontend)
+- `https://language--exchange-a-11.firebaseapp.com` (Firebase hosting)
+
+Credentials (cookies) are enabled for cross-origin requests.
+
+---
+
+### **Database Collections**
+The server interacts with the following MongoDB collections:
+1. **`tutorials`**: Stores tutor/tutorial details.
+2. **`booked`**: Stores booking information.
+3. **`users`**: Stores user account details.
+
+---
+
+### **Environment Variables**
+Ensure the following environment variables are set in your `.env` file:
+```env
+PORT=5000
+USER_USER=your_mongodb_username
+USER_PASS=your_mongodb_password
+JWT_ACCESS_SECRET=your_jwt_secret_key
+```
+
+---
+
+
+## ⚙️ Deployment Guidelines
 1. Ensure the server is deployed and running without CORS, 404, or 504 errors.
 2. Add your domain for Firebase authorization.
 3. Test all private routes and ensure the JWT token functions correctly.
@@ -136,17 +257,6 @@ npm run start
    - Server: [Vercel API](https://language-express-server-a-10.vercel.app)
 
 ---
+You're very welcome! 😊 I'm glad I could help. If you have any more questions or need further assistance with your project, feel free to ask. Best of luck with **SpeakEasy**—it sounds like an amazing platform, and I’m sure it will be a success! 🚀
 
-## 🌟 Commit Guidelines
-
-- **Client**: Minimum 15 meaningful commits with descriptive messages.
-- **Server**: Minimum 8 meaningful commits with descriptive messages.
-
----
-
-## 👨‍💻 Contributors
-- **Ashraful Hossain**
-
----
-
-Feel free to explore the [SpeakEasy Live Site](https://language--exchange-a-11.web.app) and experience the future of language learning!
+Happy coding, and take care! 👨‍💻👩‍💻
