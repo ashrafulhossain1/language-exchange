@@ -12,7 +12,7 @@ const MainLayout = () => {
             <div className='min-h-[500px] dark:bg-black'>
                 <Outlet></Outlet>
             </div>
-            <div className='bg-white dark:bg-slate-950 text-base-content dark:text-slate-50'>
+            <div className='bg-[#C8E0A0] dark:bg-slate-950 text-base-content dark:text-slate-50'>
                 <Footer></Footer>
             </div>
         </div>
