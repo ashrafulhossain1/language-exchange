@@ -5,32 +5,39 @@ import axios from "axios";
 import { Helmet } from "react-helmet-async";
 
 const FindTutors = () => {
-  const [tutors, setTutors] = useState([]);
+  const [tutors, setTutors] = useState([]); // Original list of tutors
+  const [sortedTutors, setSortedTutors] = useState([]); // Sorted list of tutors
   const [search, setSearch] = useState("");
   const [fetchingLoad, setFetchingLoad] = useState(true);
   const [sortOrder, setSortOrder] = useState("asc"); // 'asc' for ascending, 'desc' for descending
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const { data } = await axios.get(
-        `https://language-express-server-a-10.vercel.app/tutors?search=${search}`
-      );
-      setTutors(data);
-      setFetchingLoad(false);
+      try {
+        const { data } = await axios.get(
+          `https://language-express-server-a-10.vercel.app/tutors?search=${search}`
+        );
+        setTutors(data); // Store the original list
+        setSortedTutors(data); // Initialize sorted list with the original data
+        setFetchingLoad(false);
+      } catch (error) {
+        console.error("Error fetching tutors:", error);
+        setFetchingLoad(false);
+      }
     };
     fetchJobs();
   }, [search]);
 
   // Function to sort tutors by tutorFee
   const handleSort = () => {
-    const sortedTutors = [...tutors].sort((a, b) => {
+    const sorted = [...sortedTutors].sort((a, b) => {
       if (sortOrder === "asc") {
         return a.tutorFee - b.tutorFee; // Ascending order
       } else {
         return b.tutorFee - a.tutorFee; // Descending order
       }
     });
-    setTutors(sortedTutors);
+    setSortedTutors(sorted); // Update the sorted list
     setSortOrder(sortOrder === "asc" ? "desc" : "asc"); // Toggle sort order
   };
 
@@ -82,7 +89,7 @@ const FindTutors = () => {
 
       {/* All Tutors Container */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-16 container mx-auto">
-        {tutors.map((tutor) => (
+        {sortedTutors.map((tutor) => (
           <TutorCard fetchingLoad={fetchingLoad} key={tutor._id} tutor={tutor} />
         ))}
       </div>
