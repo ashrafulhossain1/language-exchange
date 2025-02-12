@@ -4,7 +4,6 @@ import { Fade } from 'react-awesome-reveal';
 import CountUp from 'react-countup';
 
 const CountUpComp = () => {
-
     const [tutorCount, setTutorCount] = useState(0);
     const [usersCount, setUsersCount] = useState(0);
     const [reviewsCount, setReviewsCount] = useState(0);
@@ -27,44 +26,46 @@ const CountUpComp = () => {
     }, []);
 
     return (
-        <div className="bg-gray-100 dark:bg-black py-5 md:py-10 ">
+        <div className="bg-gray-100 dark:bg-black py-5 md:py-10">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center gap-x-4">
                     {/* Column 1 */}
                     <Fade duration={1000} direction='left'>
-                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                        <div className='border hover:bg-[#738c4c] bg-[#2F4021] transition-colors duration-300 py-4 rounded-xl cursor-pointer'>
+                            <h1 className="text-4xl font-bold text-white">
                                 <CountUp start={0} end={tutorCount} duration={8} />+
                             </h1>
-                            <p className="text-gray-600 dark:text-slate-400">Experienced Tutors</p>
+                            <p className="text-gray-200">Experienced Tutors</p>
                         </div>
                     </Fade>
 
                     {/* Column 2 */}
                     <Fade duration={500} direction='down'>
-                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                        <div className='border hover:bg-[#738c4c] bg-[#2F4021] transition-colors duration-300 py-4 rounded-xl cursor-pointer'>
+                            <h1 className="text-4xl font-bold text-white">
                                 <CountUp start={0} end={reviewsCount} duration={8} />+
                             </h1>
-                            <p className="text-gray-600 dark:text-slate-400">5-star Reviews</p>
+                            <p className="text-gray-200">5-star Reviews</p>
                         </div>
+                    </Fade>
 
-                        {/* Column 3 */}
-                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                    {/* Column 3 */}
+                    <Fade duration={500} direction='down'>
+                        <div className='border hover:bg-[#738c4c] bg-[#2F4021] transition-colors duration-300 py-4 rounded-xl cursor-pointer'>
+                            <h1 className="text-4xl font-bold text-white">
                                 <CountUp start={0} end={9} duration={8} />+
                             </h1>
-                            <p className="text-gray-600 dark:text-slate-400">Languages Taught</p>
+                            <p className="text-gray-200">Languages Taught</p>
                         </div>
                     </Fade>
 
                     {/* Column 4 */}
                     <Fade duration={1000} direction='right'>
-                        <div className='border bg-white dark:bg-gray-800 py-4 rounded-xl'>
-                            <h1 className="text-4xl font-bold text-black dark:text-slate-50">
+                        <div className='border hover:bg-[#738c4c] bg-[#2F4021] transition-colors duration-300 py-4 rounded-xl cursor-pointer'>
+                            <h1 className="text-4xl font-bold text-white">
                                 <CountUp start={0} end={usersCount} duration={8} />+
                             </h1>
-                            <p className="text-gray-600 dark:text-slate-400">Active Users</p>
+                            <p className="text-gray-200">Active Users</p>
                         </div>
                     </Fade>
                 </div>

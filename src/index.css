@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.active{
-    background-color: #AFD275;
-    color: white;
-}
+html {
+    scroll-behavior: smooth;
+  }
+  

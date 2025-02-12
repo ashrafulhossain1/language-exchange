@@ -38,34 +38,31 @@ const AboutUs = () => {
             <li>Experienced native tutors</li>
             <li>Flexible scheduling</li>
           </ul>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-            Learn More
-          </button>
         </div>
       </div>
 
       {/* Statistics Section */}
-      <div className="bg-blue-600 py-12">
+      <div className="bg-[#B4D57E] py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
             Our Impact
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-white">10K+</p>
-              <p className="text-gray-200">Happy Learners</p>
+              <p className="text-4xl sm:text-5xl font-bold text-gray-800">10K+</p>
+              <p className="text-green-800 font-semibold">Happy Learners</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-white">500+</p>
-              <p className="text-gray-200">Certified Tutors</p>
+              <p className="text-4xl sm:text-5xl font-bold text-gray-800">500+</p>
+              <p className="text-green-800 font-semibold">Certified Tutors</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-white">20+</p>
-              <p className="text-gray-200">Countries Served</p>
+              <p className="text-4xl sm:text-5xl font-bold text-gray-800">20+</p>
+              <p className="text-green-800 font-semibold">Countries Served</p>
             </div>
             <div>
-              <p className="text-4xl sm:text-5xl font-bold text-white">98%</p>
-              <p className="text-gray-200">Success Rate</p>
+              <p className="text-4xl sm:text-5xl font-bold text-gray-800">98%</p>
+              <p className="text-green-800 font-semibold">Success Rate</p>
             </div>
           </div>
         </div>

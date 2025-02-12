@@ -5,6 +5,7 @@ import Category from './Category';
 import FAQ from './FAQ';
 import Steps from './Steps';
 import { Helmet } from 'react-helmet-async';
+import SpecialOffer from '../../components/SpecialOffer';
 
 
 const Home = () => {
@@ -29,6 +30,9 @@ const Home = () => {
             {/* How Its Works */}
             <div>
             <Steps></Steps>
+            </div>
+            <div>
+                <SpecialOffer></SpecialOffer>
             </div>
             {/* faq */}
             <div>
