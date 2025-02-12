@@ -5,6 +5,7 @@ import NavProfile from '../pages/Auth/NavProfile';
 import ThemeToggle from '../context/ThemeToggle';
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import logo from '../assets/book-svgrepo-com.svg'
 
 
 const Navbar = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className=' shadow-md glass bg-[white] dark:text-white dark:bg-dark-background'>
+            <div className=' shadow-md glass bg-[#F7F8F4]  dark:text-white dark:bg-dark-background'>
                 <div className="navbar container mx-auto ">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -46,7 +47,10 @@ const Navbar = () => {
                                 {links}
                             </ul>
                         </div>
-                        <Link to={'/'} className="font-bold text-sm md:text-3xl">SpeakEasy</Link>
+                        <div className='flex justify-center items-center'>
+                            <img src={logo} className='w-12 h-12' alt="" />
+                            <Link to={'/'} className="font-bold text-sm md:text-3xl">SpeakEasy</Link>
+                        </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-4">

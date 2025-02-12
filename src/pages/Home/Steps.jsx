@@ -9,7 +9,7 @@ const Steps = () => {
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Step 1 */}
-                <Fade duration={1500} direction='left'>
+                {/* <Fade duration={1500} direction='left'> */}
                     <div className="border flex flex-col border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
                         <div className="flex items-center mb-4">
                             <div className="bg-teal-500 text-white font-bold text-lg h-10 w-10 flex items-center justify-center rounded-full">
@@ -67,10 +67,10 @@ const Steps = () => {
                             </div>
                         </div>
                     </div>
-                </Fade>
+                {/* </Fade> */}
 
                 {/* Step 2 */}
-                <Fade direction='up' duration={1000}>
+                {/* <Fade direction='up' duration={1000}> */}
                     <div className="border flex flex-col border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-md bg-white dark:bg-gray-800">
                         <div className="flex items-center mb-4">
                             <div className="bg-yellow-500 text-white font-bold text-lg h-10 w-10 flex items-center justify-center rounded-full">
@@ -89,10 +89,10 @@ const Steps = () => {
                             className="w-full rounded-lg"
                         />
                     </div>
-                </Fade>
+                {/* </Fade> */}
 
                 {/* Step 3 */}
-                <Fade direction='right' duration={1500}>
+                {/* <Fade direction='right' duration={1500}> */}
                     <div className="border flex flex-col border-gray-300 dark:border-gray-700 rounded-lg p-6 shadow-md bg-white dark:bg-gray-800">
                         <div className="flex items-center mb-4">
                             <div className="bg-blue-500 text-white font-bold text-lg h-10 w-10 flex items-center justify-center rounded-full">
@@ -111,7 +111,7 @@ const Steps = () => {
                             className="w-full rounded-lg"
                         />
                     </div>
-                </Fade>
+                {/* </Fade> */}
             </div>
         </div>
     );
